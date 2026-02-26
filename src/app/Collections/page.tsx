@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SAMPLE_PRODUCTS, MOCK_USER } from '@/api/mockData';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
@@ -55,7 +55,7 @@ interface WishlistItem {
     user_email: string;
 }
 
-export default function Collections() {
+function CollectionsContent() {
     const searchParams = useSearchParams();
     const initialCategory = searchParams?.get('category') || 'all';
 
@@ -388,5 +388,13 @@ export default function Collections() {
                 )}
             </div>
         </div>
+    );
+}
+
+export default function Collections() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <CollectionsContent />
+        </Suspense>
     );
 }
