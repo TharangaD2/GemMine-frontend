@@ -13,22 +13,22 @@ const contactInfo = [
     {
         icon: MapPin,
         title: 'Visit Us',
-        details: ['123 Luxury Avenue', 'Diamond District', 'New York, NY 10036']
+        details: ['No: 9A, St Anthonys\'s Mawatha', 'Colombo 03', 'Sri Lanka']
     },
     {
         icon: Phone,
         title: 'Call Us',
-        details: ['+1 (555) 123-4567', '+1 (555) 987-6543']
+        details: ['+94 777 483 464', '+94 112 375 196']
     },
     {
         icon: Mail,
         title: 'Email Us',
-        details: ['contact@aurum.com', 'support@aurum.com']
+        details: ['sales@gemminelk.com']
     },
     {
         icon: Clock,
         title: 'Opening Hours',
-        details: ['Mon - Sat: 10AM - 8PM', 'Sunday: 12PM - 6PM']
+        details: ['Mon - Sat: 9AM - 6PM', 'Sunday: Closed']
     }
 ];
 

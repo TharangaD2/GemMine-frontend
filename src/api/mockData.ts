@@ -4,7 +4,7 @@ export const SAMPLE_PRODUCTS = [
         name: 'Royal Emerald Ring',
         category: 'Rings',
         price: 4500,
-        image_url: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800',
+        image_url: '/img/ring.jpg',
         is_new: true,
         material: '18K Gold, Emerald'
     },
@@ -13,7 +13,7 @@ export const SAMPLE_PRODUCTS = [
         name: 'Diamond Solitaire Necklace',
         category: 'Necklaces',
         price: 8900,
-        image_url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=800',
+        image_url: '/img/jewellery.jpg',
         material: 'Platinum, Diamond'
     },
     {
@@ -21,7 +21,7 @@ export const SAMPLE_PRODUCTS = [
         name: 'Sapphire Elegance Earrings',
         category: 'Earrings',
         price: 3200,
-        image_url: 'https://images.unsplash.com/photo-1535633302703-b0703af78518?auto=format&fit=crop&q=80&w=800',
+        image_url: '/img/earring.jpeg',
         material: 'White Gold, Sapphire'
     },
     {

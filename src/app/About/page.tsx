@@ -8,18 +8,57 @@ import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 
 const milestones = [
-    { year: '1985', title: 'The Beginning', description: 'Founded with a vision to create timeless pieces' },
-    { year: '1995', title: 'International Expansion', description: 'Opened flagship stores across Europe' },
-    { year: '2005', title: 'Royal Recognition', description: 'Appointed as official jeweller to royalty' },
-    { year: '2015', title: 'Innovation Award', description: 'Received the Global Excellence in Craftsmanship Award' },
-    { year: '2024', title: 'Digital Era', description: 'Bringing luxury jewellery to the digital world' }
+    { year: '2003', title: 'Traditional Gemmine Founded', description: 'Established with a vision to elevate Sri Lanka’s global presence in the gem trade.' },
+    { year: '2010', title: 'Showroom Expansion', description: 'Opened our centrally located showroom in Colombo, showcasing curated fine jewellery.' },
+    { year: '2015', title: 'Global Recognition', description: 'Expanded our reach to serving discerning clients in over a dozen countries.' },
+    { year: '2023', title: '20 Years of Excellence', description: 'Celebrating two decades of delivering superior quality and enduring value.' },
+    { year: '2025', title: 'Future of Luxury', description: 'Preparing to introduce ethically produced lab-grown diamonds to our collection.' }
 ];
 
-const values = [
-    { icon: Diamond, title: 'Quality', description: 'Only the finest materials and gemstones' },
-    { icon: Award, title: 'Craftsmanship', description: 'Handcrafted by master artisans' },
-    { icon: Users, title: 'Heritage', description: 'Four generations of expertise' },
-    { icon: Globe, title: 'Sustainability', description: 'Ethically sourced materials' }
+const team = [
+    {
+        name: 'Mohammed Naagur Pitchai Ariz',
+        role: 'Chairman',
+        description: 'With over three decades in the gem industry, Mr. Ariz leading figures across Sri Lanka’s key gem-trading regions.'
+    },
+    {
+        name: 'M.S.K.Rahman',
+        role: 'Managing Director',
+        description: 'A GIA-certified gemologist with more than 30 years of experience and deep technical expertise.'
+    },
+    {
+        name: 'Mohammed Yousuf Faraz',
+        role: 'Director, Strategy & Finance',
+        description: 'Leveraging international experience from the UK, overseeing procurement, logistics, and overall operations.'
+    },
+    {
+        name: 'Mohammed Abdulla Nilamdeen',
+        role: 'Director, Consultant',
+        description: 'CIMA (UK)-qualified accountant with over 35 years of international experience in financial planning.'
+    }
+];
+
+const products = [
+    {
+        title: "Precious Gemstones",
+        description: "Ceylon sapphires (royal blue, padparadscha), rare rubies, brilliant diamonds, and stunning emeralds.",
+        icon: Diamond
+    },
+    {
+        title: "Semi-Precious Gemstones",
+        description: "Handpicked garnets, amethysts, aquamarines, topaz, tourmalines, and moonstones.",
+        icon: Award
+    },
+    {
+        title: "Exquisite Jewellery",
+        description: "Intricately designed rings, earrings, pendants, and necklaces, from heirlooms to contemporary pieces.",
+        icon: Users
+    },
+    {
+        title: "Bespoke Services",
+        description: "Custom designs and expert repairs, turning your vision into a wearable masterpiece.",
+        icon: Globe
+    }
 ];
 
 export default function About() {
@@ -29,7 +68,7 @@ export default function About() {
             <div className="relative h-[60vh] bg-[#1a1a1a] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
                 <img
-                    src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1600&q=80"
+                    src="/img/jewellery.jpg"
                     alt="Craftsmanship"
                     className="w-full h-full object-cover opacity-60"
                 />
@@ -59,25 +98,19 @@ export default function About() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Est. 1985</span>
+                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Est. 2003</span>
                             <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a] mt-4">
-                                Crafting Dreams Into Reality
+                                Our Heritage & Vision
                             </h2>
                             <div className="mt-8 space-y-6 text-gray-600 leading-relaxed">
                                 <p>
-                                    For nearly four decades, Aurum has been at the forefront of fine jewellery,
-                                    creating pieces that transcend time and trends. Our journey began in a small
-                                    atelier, driven by an unwavering commitment to excellence.
+                                    Founded in 2003, Traditional Gemmine (Pvt) Ltd has earned a distinguished reputation in Sri Lanka’s gem and jewellery industry. Guided by a vision to elevate the nation’s global presence in the gem trade, we uphold the highest standards of quality, integrity, and customer care.
                                 </p>
                                 <p>
-                                    Today, we continue to honor the traditions passed down through generations
-                                    of master craftsmen, while embracing innovation to create jewellery that
-                                    speaks to the modern connoisseur.
+                                    Our centrally located showroom in Colombo showcases a curated selection of fine jewellery, crafted to meet international benchmarks. We pride ourselves on delivering superior quality, personalized service, and enduring value to clients around the world.
                                 </p>
                                 <p>
-                                    Every piece that bears the Aurum name is a testament to our dedication
-                                    to perfection – from the careful selection of ethically sourced gemstones
-                                    to the final polish that brings each creation to life.
+                                    Our strength lies in our experienced and multilingual team, specializing in gemology, stone identification, and traditional jewellery design. We stay attuned to global trends while preserving the rich heritage of Sri Lankan craftsmanship.
                                 </p>
                             </div>
                         </motion.div>
@@ -91,14 +124,14 @@ export default function About() {
                         >
                             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                                 <img
-                                    src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&q=80"
+                                    src="/img/ring2.jpg"
                                     alt="Master Craftsman"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
                             <div className="absolute -bottom-8 -left-8 w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
                                 <img
-                                    src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80"
+                                    src="/img/ring3.jpg"
                                     alt="Jewellery Detail"
                                     className="w-full h-full object-cover"
                                 />
@@ -108,7 +141,7 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Values Section */}
+            {/* Products Section */}
             <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#1a1a1a]">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
@@ -117,29 +150,25 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <span className="text-amber-400 tracking-[0.3em] uppercase text-sm">What We Stand For</span>
-                        <h2 className="text-4xl md:text-5xl font-serif text-white mt-4">Our Values</h2>
+                        <span className="text-amber-400 tracking-[0.3em] uppercase text-sm">Our Offerings</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-white mt-4">Products & Expertise</h2>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {values.map((value, index) => (
+                        {products.map((product, index) => (
                             <motion.div
-                                key={value.title}
+                                key={product.title}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="text-center"
+                                className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors group"
                             >
-                                <motion.div
-                                    whileHover={{ scale: 1.1, rotateY: 180 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30 flex items-center justify-center"
-                                >
-                                    <value.icon className="w-10 h-10 text-amber-400" />
-                                </motion.div>
-                                <h3 className="text-xl font-medium text-white mb-3">{value.title}</h3>
-                                <p className="text-gray-400 text-sm">{value.description}</p>
+                                <div className="w-12 h-12 mb-6 rounded-xl bg-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/30 transition-colors">
+                                    <product.icon className="w-6 h-6 text-amber-400" />
+                                </div>
+                                <h3 className="text-xl font-medium text-white mb-3">{product.title}</h3>
+                                <p className="text-gray-400 text-sm leading-relaxed">{product.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -149,43 +178,88 @@ export default function About() {
             {/* Timeline Section */}
             <section className="py-24 px-6 md:px-12 lg:px-24">
                 <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                        <div>
+                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Our Journey</span>
+                            <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a] mt-4 mb-12">Milestones</h2>
+                            <div className="space-y-8">
+                                {milestones.map((milestone, index) => (
+                                    <motion.div
+                                        key={milestone.year}
+                                        initial={{ opacity: 0, x: -30 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                        className="flex gap-6 items-start group"
+                                    >
+                                        <div className="text-2xl font-serif text-amber-600 w-16 pt-1">{milestone.year}</div>
+                                        <div className="flex-1 pb-8 border-l border-amber-200 pl-8 relative">
+                                            <div className="absolute top-2 -left-1 w-2 h-2 rounded-full bg-amber-500 group-last:border-none" />
+                                            <h3 className="text-xl font-medium text-[#1a1a1a]">{milestone.title}</h3>
+                                            <p className="text-gray-500 mt-2">{milestone.description}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Global Clientele */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="bg-amber-900 text-white p-12 rounded-3xl"
+                        >
+                            <span className="text-amber-400 tracking-[0.3em] uppercase text-sm">Global Presence</span>
+                            <h2 className="text-4xl font-serif mt-4 mb-8">Serving the World</h2>
+                            <p className="text-amber-100/80 leading-relaxed mb-8 text-lg">
+                                Traditional Gemmine (Pvt) Ltd proudly serves a broad international market, with a dedicated clientele from across the globe.
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                {['China', 'Korea', 'Singapore', 'India', 'Saudi Arabia', 'UAE', 'Russia', 'France', 'Switzerland'].map(country => (
+                                    <span key={country} className="px-4 py-2 bg-white/10 rounded-full text-sm border border-white/10 hover:bg-white/20 transition-colors">
+                                        {country}
+                                    </span>
+                                ))}
+                            </div>
+                            <div className="mt-12 p-6 bg-white/5 rounded-2xl border border-white/10">
+                                <p className="text-sm italic text-amber-200/70">
+                                    "Our doors are open 365 days a year, making us a dependable destination for tourists and global travellers alike."
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Leadership Section */}
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+                <div className="max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Our Journey</span>
-                        <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a] mt-4">Milestones</h2>
+                        <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Expertise</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a] mt-4">Leadership Team</h2>
                     </motion.div>
 
-                    <div className="relative">
-                        {/* Timeline Line */}
-                        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-amber-200 hidden lg:block" />
-
-                        <div className="space-y-12">
-                            {milestones.map((milestone, index) => (
-                                <motion.div
-                                    key={milestone.year}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className={`flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                                        }`}
-                                >
-                                    <div className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                                        <div className="bg-white p-8 rounded-2xl shadow-lg">
-                                            <span className="text-amber-600 font-serif text-2xl">{milestone.year}</span>
-                                            <h3 className="text-xl font-medium text-[#1a1a1a] mt-2">{milestone.title}</h3>
-                                            <p className="text-gray-500 mt-2">{milestone.description}</p>
-                                        </div>
-                                    </div>
-                                    <div className="w-4 h-4 rounded-full bg-amber-500 border-4 border-amber-200 hidden lg:block" />
-                                    <div className="lg:w-1/2" />
-                                </motion.div>
-                            ))}
-                        </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {team.map((member, index) => (
+                            <motion.div
+                                key={member.name}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="group p-8 rounded-3xl bg-[#f8f5f0] border border-transparent hover:border-amber-200 transition-all duration-500"
+                            >
+                                <h3 className="text-xl font-medium text-[#1a1a1a] mb-1 group-hover:text-amber-700 transition-colors">{member.name}</h3>
+                                <p className="text-amber-600 text-sm font-medium mb-4">{member.role}</p>
+                                <p className="text-gray-500 text-sm leading-relaxed">{member.description}</p>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -206,69 +280,140 @@ export default function About() {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
                         {[
                             {
-                                src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=700&q=80",
+                                src: "/img/img1.png",
                                 alt: "Bridal jewellery fitting",
                                 caption: "Bridal Consultation",
                                 sub: "A bride discovering her perfect piece"
                             },
                             {
-                                src: "https://images.unsplash.com/photo-1620656798652-a6e44b0a4d4f?w=700&q=80",
+                                src: "/img/img2.png",
                                 alt: "Customer wearing necklace",
                                 caption: "Timeless Elegance",
                                 sub: "Wearing a custom gold necklace"
                             },
                             {
-                                src: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=700&q=80",
+                                src: "/img/img3.png",
                                 alt: "Couple choosing engagement ring",
                                 caption: "A New Chapter",
                                 sub: "Finding the perfect engagement ring"
                             },
                             {
-                                src: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=700&q=80",
+                                src: "/img/img4.png",
                                 alt: "Gift wrapping jewellery",
                                 caption: "The Gift of Love",
                                 sub: "Beautifully wrapped for a special someone"
                             },
                             {
-                                src: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=700&q=80",
+                                src: "/img/img5.jpeg",
                                 alt: "Lady wearing diamond earrings",
                                 caption: "Radiant Confidence",
                                 sub: "Sparkling diamond earrings for every occasion"
                             },
                             {
-                                src: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=700&q=80",
+                                src: "/img/img6.jpeg",
                                 alt: "Jewellery store experience",
                                 caption: "In-Store Experience",
                                 sub: "Personalised service in our boutique"
+                            },
+                            {
+                                src: "/img/img7.png",
+                                alt: "Elegant evening piece",
+                                caption: "Evening Glamour",
+                                sub: "Exquisite pieces for your special night"
                             }
                         ].map((item, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5] cursor-pointer"
+                                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{
+                                    duration: 0.7,
+                                    delay: index * 0.05,
+                                    ease: [0.21, 0.47, 0.32, 0.98]
+                                }}
+                                className="break-inside-avoid group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer bg-white"
                             >
-                                <img
-                                    src={item.src}
-                                    alt={item.alt}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                                {/* Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                {/* Caption */}
-                                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <h3 className="text-white font-serif text-xl">{item.caption}</h3>
-                                    <p className="text-amber-300 text-sm mt-1">{item.sub}</p>
+                                <div className="relative overflow-hidden aspect-auto">
+                                    <img
+                                        src={item.src}
+                                        alt={item.alt}
+                                        className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    />
+                                    {/* Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                    {/* Caption Content */}
+                                    <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none">
+                                        <motion.div
+                                            initial={{ x: -20 }}
+                                            whileHover={{ x: 0 }}
+                                            className="space-y-2"
+                                        >
+                                            <h3 className="text-white font-serif text-2xl leading-tight">
+                                                {item.caption}
+                                            </h3>
+                                            <div className="w-12 h-0.5 bg-amber-400" />
+                                            <p className="text-amber-100/90 text-sm font-light tracking-wide">
+                                                {item.sub}
+                                            </p>
+                                        </motion.div>
+                                    </div>
+
+                                    {/* Subtle border on hover */}
+                                    <div className="absolute inset-0 border-0 group-hover:border-[12px] border-white/10 transition-all duration-500 pointer-events-none" />
                                 </div>
-                                {/* Always-visible bottom bar */}
-                                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-amber-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                             </motion.div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Lab-Grown Diamonds Section */}
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#1a1a1a] overflow-hidden">
+                <div className="max-w-7xl mx-auto relative">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <span className="text-amber-400 tracking-[0.3em] uppercase text-sm font-medium">Coming Soon</span>
+                            <h2 className="text-4xl md:text-5xl font-serif text-white mt-4 mb-6">Lab-Grown Diamonds</h2>
+                            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                                In line with our commitment to innovation and sustainability, Traditional Gemmine (Pvt) Ltd will soon introduce lab-grown diamonds into our offerings.
+                            </p>
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-4 text-white">
+                                    <div className="w-2 h-2 rounded-full bg-amber-500" />
+                                    <span>Ethically Produced & Sustainable</span>
+                                </div>
+                                <div className="flex items-center gap-4 text-white">
+                                    <div className="w-2 h-2 rounded-full bg-amber-500" />
+                                    <span>Virtually Indistinguishable from Natural</span>
+                                </div>
+                                <div className="flex items-center gap-4 text-white">
+                                    <div className="w-2 h-2 rounded-full bg-amber-500" />
+                                    <span>Eco-Conscious Responsible Luxury</span>
+                                </div>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="relative group cursor-pointer"
+                        >
+                            <div className="aspect-square rounded-full bg-gradient-to-tr from-amber-500/20 to-transparent absolute -inset-10 blur-3xl group-hover:scale-110 transition-transform duration-700" />
+                            <img
+                                src="/img/img5.jpeg"
+                                alt="Modern Diamond Jewellery"
+                                className="relative rounded-3xl w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:rotate-1"
+                            />
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -282,10 +427,10 @@ export default function About() {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a]">
-                            Begin Your Story With Us
+                            Experience Authenticity & Artistry
                         </h2>
                         <p className="text-gray-600 mt-6 text-lg">
-                            Every piece of jewellery tells a story. Let us help you write yours.
+                            Whether you’re a dedicated collector or a curious explorer, Traditional Gemmine (Pvt) Ltd promises authenticity, artistry, and timeless beauty.
                         </p>
                         <Link href={createPageUrl('Collections')}>
                             <Button className="mt-8 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-10 py-6 rounded-full text-lg">

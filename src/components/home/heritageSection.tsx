@@ -23,7 +23,7 @@ export default function HeritageSection() {
                             className="rounded-2xl overflow-hidden shadow-2xl"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&q=80"
+                                src="/img/ring3.jpg"
                                 alt="Master Craftsman"
                                 className="w-full h-[400px] md:h-[500px] object-cover"
                             />
@@ -38,7 +38,7 @@ export default function HeritageSection() {
                             className="absolute -bottom-8 -right-8 md:-right-12 w-40 h-40 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-xl border-4 border-white"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&q=80"
+                                src="/img/ring2.jpg"
                                 alt="Jewellery Detail"
                                 className="w-full h-full object-cover"
                             />
@@ -64,8 +64,8 @@ export default function HeritageSection() {
 
                     <div className="mt-8 space-y-6 text-gray-600 leading-relaxed">
                         <p>
-                            For nearly four decades, Aurum has been synonymous with exceptional
-                            craftsmanship and timeless design. Our master artisans blend traditional
+                            Since 2018, Gem Mine has been synonymous with exceptional
+                            craftsmanship and timeless design in Sri Lanka. Our master artisans blend traditional
                             techniques with contemporary innovation.
                         </p>
                         <p>
@@ -77,10 +77,11 @@ export default function HeritageSection() {
                     {/* Stats */}
                     <div className="grid grid-cols-3 gap-6 mt-10">
                         {[
-                            { value: "38+", label: "Years" },
-                            { value: "50K+", label: "Pieces" },
-                            { value: "100+", label: "Artisans" }
+                            { value: "6+", label: "Years" },
+                            { value: "10K+", label: "Pieces" },
+                            { value: "50+", label: "Artisans" }
                         ].map((stat, index) => (
+
                             <motion.div
                                 key={stat.label}
                                 initial={{ opacity: 0, y: 20 }}

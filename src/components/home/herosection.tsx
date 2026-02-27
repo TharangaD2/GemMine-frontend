@@ -146,7 +146,7 @@ export default function HeroSection() {
                             style={{ perspective: '1000px' }}
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80"
+                                src="/img/ring.jpg"
                                 alt="Luxury Diamond Ring"
                                 className="w-full h-full object-cover"
                             />

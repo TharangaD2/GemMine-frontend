@@ -81,26 +81,27 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Contact */}
+                    {/* Contact Us */}
                     <div>
                         <h4 className="text-sm font-medium uppercase tracking-wider mb-6">Contact Us</h4>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-4 h-4 text-[#d4a89a] mt-0.5 flex-shrink-0" />
                                 <span className="text-gray-400 text-sm">
-                                    123 Luxury Avenue, Diamond District, New York, NY 10036
+                                    No: 9A, St Anthonys's Mawatha, Colombo 03, Sri Lanka
                                 </span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-4 h-4 text-[#d4a89a] flex-shrink-0" />
-                                <span className="text-gray-400 text-sm">+1 (555) 123-4567</span>
+                                <span className="text-gray-400 text-sm">+94 777 483 464</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-4 h-4 text-[#d4a89a] flex-shrink-0" />
-                                <span className="text-gray-400 text-sm">contact@gemmine.com</span>
+                                <span className="text-gray-400 text-sm">sales@gemminelk.com</span>
                             </li>
                         </ul>
                     </div>
+
                 </div>
 
                 {/* Bottom */}
