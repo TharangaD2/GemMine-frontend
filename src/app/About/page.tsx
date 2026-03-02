@@ -123,9 +123,12 @@ export default function About() {
                             className="relative"
                         >
                             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                                <img
-                                    src="/img/ring2.jpg"
-                                    alt="Master Craftsman"
+                                <video
+                                    src="/vedio/blue_ring.mp4"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -176,43 +179,69 @@ export default function About() {
             </section>
 
             {/* Timeline Section */}
-            <section className="py-24 px-6 md:px-12 lg:px-24">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                        <div>
-                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Our Journey</span>
-                            <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a] mt-4 mb-12">Milestones</h2>
-                            <div className="space-y-8">
-                                {milestones.map((milestone, index) => (
-                                    <motion.div
-                                        key={milestone.year}
-                                        initial={{ opacity: 0, x: -30 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1 }}
-                                        className="flex gap-6 items-start group"
-                                    >
-                                        <div className="text-2xl font-serif text-amber-600 w-16 pt-1">{milestone.year}</div>
-                                        <div className="flex-1 pb-8 border-l border-amber-200 pl-8 relative">
-                                            <div className="absolute top-2 -left-1 w-2 h-2 rounded-full bg-amber-500 group-last:border-none" />
-                                            <h3 className="text-xl font-medium text-[#1a1a1a]">{milestone.title}</h3>
-                                            <p className="text-gray-500 mt-2">{milestone.description}</p>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <span className="inline-block px-4 py-2 rounded-full bg-amber-500/10 text-amber-600 text-sm font-medium mb-4 tracking-[0.2em] uppercase">
+                            Our Journey
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a]">
+                            Milestones & Achievements
+                        </h2>
+                    </motion.div>
 
-                        {/* Global Clientele */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="bg-amber-900 text-white p-12 rounded-3xl"
-                        >
+                    <div className="relative">
+                        {/* Timeline Line */}
+                        <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-amber-200 hidden lg:block" />
+
+                        <div className="space-y-12">
+                            {milestones.map((milestone, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                                >
+                                    <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                                        <div className={`inline-block p-8 rounded-2xl bg-[#f8f5f0] border border-amber-100/50 hover:border-amber-200 transition-all ${index % 2 === 0 ? 'lg:ml-auto' : ''} max-w-md shadow-sm hover:shadow-md`}>
+                                            <span className="text-amber-600 font-serif text-xl font-bold">{milestone.year}</span>
+                                            <h4 className="text-xl font-medium text-[#1a1a1a] mt-2">{milestone.title}</h4>
+                                            <p className="text-gray-600 mt-2 leading-relaxed">{milestone.description}</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Center Point */}
+                                    <div className="hidden lg:flex w-4 h-4 rounded-full bg-amber-500 border-4 border-white z-10 shadow-sm" />
+
+                                    <div className="flex-1 hidden lg:block" />
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Global Clientele */}
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#f8f5f0]">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-amber-900 text-white p-12 rounded-3xl overflow-hidden relative"
+                    >
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                        <div className="relative z-10">
                             <span className="text-amber-400 tracking-[0.3em] uppercase text-sm">Global Presence</span>
                             <h2 className="text-4xl font-serif mt-4 mb-8">Serving the World</h2>
-                            <p className="text-amber-100/80 leading-relaxed mb-8 text-lg">
+                            <p className="text-amber-100/80 leading-relaxed mb-8 text-lg max-w-2xl">
                                 Traditional Gemmine (Pvt) Ltd proudly serves a broad international market, with a dedicated clientele from across the globe.
                             </p>
                             <div className="flex flex-wrap gap-3">
@@ -227,8 +256,8 @@ export default function About() {
                                     "Our doors are open 365 days a year, making us a dependable destination for tourists and global travellers alike."
                                 </p>
                             </div>
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -418,6 +447,68 @@ export default function About() {
                 </div>
             </section>
 
+            {/* Artistry in Motion Section */}
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-white overflow-hidden">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Artistry in Motion</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a] mt-4">Witness the Craft</h2>
+                        <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
+                            Experience the soul of our craftsmanship. From the initial spark of inspiration to the final radiant polish, watch as we bring timeless beauty to life.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="relative group rounded-3xl overflow-hidden shadow-2xl bg-black aspect-video"
+                        >
+                            <video
+                                src="/vedio/clip1.mp4"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                            <div className="absolute bottom-8 left-8 right-8 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <h3 className="text-2xl font-serif mb-2">The Meticulous Cut</h3>
+                                <p className="text-amber-100/80 text-sm">Precision and patience in every facet.</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="relative group rounded-3xl overflow-hidden shadow-2xl bg-black aspect-video"
+                        >
+                            <video
+                                src="/vedio/clip2.mp4"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                            <div className="absolute bottom-8 left-8 right-8 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <h3 className="text-2xl font-serif mb-2">The Radiant Finish</h3>
+                                <p className="text-amber-100/80 text-sm">Where raw nature meets human artistry.</p>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Section */}
             <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-amber-50 to-amber-100/50">
                 <div className="max-w-4xl mx-auto text-center">
@@ -432,7 +523,7 @@ export default function About() {
                         <p className="text-gray-600 mt-6 text-lg">
                             Whether you’re a dedicated collector or a curious explorer, Traditional Gemmine (Pvt) Ltd promises authenticity, artistry, and timeless beauty.
                         </p>
-                        <Link href={createPageUrl('Collections')}>
+                        <Link href={createPageUrl('collections')}>
                             <Button className="mt-8 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-10 py-6 rounded-full text-lg">
                                 Explore Collections
                                 <ArrowRight className="ml-2 w-5 h-5" />

@@ -95,7 +95,7 @@ export default function HeritageSection() {
                         ))}
                     </div>
 
-                    <Link href={createPageUrl('About')}>
+                    <Link href={createPageUrl('about')}>
                         <Button className="mt-10 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-8 py-6 rounded-full group">
                             Discover Our Story
                             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

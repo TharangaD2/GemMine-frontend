@@ -54,7 +54,7 @@ export default function CollectionsSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
-                        <Link href={`${createPageUrl('Collections')}?category=${collection.category}`}>
+                        <Link href={`${createPageUrl('collections')}?category=${collection.category}`}>
                             <motion.div
                                 whileHover={{ y: -10 }}
                                 className="group relative overflow-hidden rounded-2xl bg-[#1a1a1a] cursor-pointer"

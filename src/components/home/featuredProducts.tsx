@@ -60,7 +60,7 @@ export default function FeaturedProducts({
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         className="group"
                     >
-                        <Link href={`${createPageUrl('ProductDetail')}?id=${product.id}`}>
+                        <Link href={`${createPageUrl('collections')}?category=${product.category}`}>
                             <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500">
                                 {/* Image Container */}
                                 <div className="aspect-square overflow-hidden relative">
