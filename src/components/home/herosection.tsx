@@ -145,9 +145,12 @@ export default function HeroSection() {
                             className="absolute inset-12 rounded-full overflow-hidden shadow-[0_0_100px_rgba(212,168,154,0.2)] border-2 border-[#d4a89a]/30"
                             style={{ perspective: '1000px' }}
                         >
-                            <img
-                                src="/img/ring.jpg"
-                                alt="Luxury Diamond Ring"
+                            <video
+                                src="/vedio/ring.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

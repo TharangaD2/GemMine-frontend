@@ -26,9 +26,9 @@ export default function Navbar({
 
     const navLinks = [
         { name: 'Collections', path: 'Collections' },
-        { name: 'High Jewellery', path: 'Collections' },
-        { name: 'About', path: 'About' },
-        { name: 'Contact', path: 'Contact' }
+        { name: 'Blog', path: 'Blog' },
+        { name: 'about', path: 'about' },
+        { name: 'contact', path: 'contact' }
     ];
 
     return (
