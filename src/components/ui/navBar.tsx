@@ -25,10 +25,10 @@ export default function Navbar({
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     const navLinks = [
-        { name: 'Collections', path: 'collections' },
-        { name: 'Blog', path: 'blog' },
-        { name: 'About', path: 'about' },
-        { name: 'Contact', path: 'contact' }
+        { name: 'Collections', path: 'Collections' },
+        { name: 'Blog', path: 'Blog' },
+        { name: 'About', path: 'About' },
+        { name: 'Contact', path: 'Contact' }
     ];
 
     return (
