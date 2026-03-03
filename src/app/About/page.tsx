@@ -134,7 +134,7 @@ export default function About() {
                             </div>
                             <div className="absolute -bottom-8 -left-8 w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
                                 <img
-                                    src="/img/ring3.jpg"
+                                    src="/img/bluering.jpeg"
                                     alt="Jewellery Detail"
                                     className="w-full h-full object-cover"
                                 />

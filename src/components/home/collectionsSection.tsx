@@ -14,7 +14,7 @@ const collections = [
     {
         name: "Diamond Rings",
         description: "Brilliance in every facet",
-        image: "/img/ring.jpg",
+        image: "/img/diamondring.jpeg",
         category: "rings"
     },
     {

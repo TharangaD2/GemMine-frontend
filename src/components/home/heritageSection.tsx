@@ -22,9 +22,11 @@ export default function HeritageSection() {
                             whileHover={{ scale: 1.02 }}
                             className="rounded-2xl overflow-hidden shadow-2xl"
                         >
-                            <img
-                                src="/img/ring3.jpg"
-                                alt="Master Craftsman"
+                            <video
+                                src="/vedio/pinkgem.mp4"
+                                autoPlay
+                                loop
+                                muted
                                 className="w-full h-[400px] md:h-[500px] object-cover"
                             />
                         </motion.div>
@@ -38,7 +40,7 @@ export default function HeritageSection() {
                             className="absolute -bottom-8 -right-8 md:-right-12 w-40 h-40 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-xl border-4 border-white"
                         >
                             <img
-                                src="/img/ring2.jpg"
+                                src="/img/ringp.jpeg"
                                 alt="Jewellery Detail"
                                 className="w-full h-full object-cover"
                             />

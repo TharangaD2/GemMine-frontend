@@ -29,7 +29,7 @@ const features = [
 
 export default function FeaturesSection() {
     return (
-        <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#1a1a1a]">
+        <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-[#1e2a47] via-[#2d3e6a] to-[#1e2a47]">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {features.map((feature, index) => (
                     <motion.div

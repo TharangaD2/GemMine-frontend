@@ -19,7 +19,7 @@ export default function NewsletterSection() {
     };
 
     return (
-        <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a] relative overflow-hidden">
+        <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#f8f5f0] relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute inset-0">
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
@@ -33,16 +33,16 @@ export default function NewsletterSection() {
                 transition={{ duration: 0.8 }}
                 className="relative z-10 max-w-2xl mx-auto text-center"
             >
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-900/20 border border-amber-700/30 rounded-full mb-6">
-                    <Sparkles className="w-4 h-4 text-amber-400" />
-                    <span className="text-amber-400 text-sm">Stay Connected</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1e2a47]/10 border border-[#1e2a47]/20 rounded-full mb-6">
+                    <Sparkles className="w-4 h-4 text-[#1e2a47]" />
+                    <span className="text-[#1e2a47] text-sm">Stay Connected</span>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
+                <h2 className="text-4xl md:text-5xl font-serif text-[#1e2a47] mb-4">
                     Join the Aurum Circle
                 </h2>
 
-                <p className="text-gray-400 mb-10">
+                <p className="text-[#1e2a47]/70 mb-10">
                     Be the first to discover new collections, exclusive events, and special offers from the world of Aurum.
                 </p>
 
@@ -52,11 +52,11 @@ export default function NewsletterSection() {
                         placeholder="Enter your email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="flex-1 bg-white/5 border-amber-700/30 text-white placeholder:text-gray-500 h-14 rounded-full px-6 focus:border-amber-500"
+                        className="flex-1 bg-white border-[#1e2a47] text-[#1e2a47] placeholder:text-[#1e2a47]/40 h-14 rounded-full px-6 focus-visible:ring-[#1e2a47] focus:border-[#2d3e6a]"
                     />
                     <Button
                         type="submit"
-                        className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-black font-medium h-14 px-8 rounded-full"
+                        className="bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white font-medium h-14 px-8 rounded-full shadow-lg shadow-[#1e2a47]/20"
                     >
                         Subscribe
                         <Send className="ml-2 w-4 h-4" />

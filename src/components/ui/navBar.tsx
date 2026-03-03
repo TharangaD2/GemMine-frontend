@@ -41,13 +41,13 @@ export default function Navbar({
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
-                    <div className="flex items-center justify-between h-20">
+                    <div className="flex items-center justify-between h-24">
                         {/* Logo */}
                         <Link href="/" className="flex items-center">
                             <img
                                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6976324f456a9c4ce6479020/0b5c3b59c_gem.png"
                                 alt="Gem Mine"
-                                className="h-16 w-auto"
+                                className="h-20 w-auto"
                             />
                         </Link>
 
@@ -132,7 +132,7 @@ export default function Navbar({
                                 <img
                                     src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6976324f456a9c4ce6479020/0b5c3b59c_gem.png"
                                     alt="Gem Mine"
-                                    className="h-16 w-auto"
+                                    className="h-20 w-auto"
                                 />
                                 <Button
                                     variant="ghost"

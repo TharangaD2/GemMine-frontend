@@ -4,7 +4,7 @@ export const SAMPLE_PRODUCTS = [
         name: 'Royal Emerald Ring',
         category: 'Rings',
         price: 4500,
-        image_url: '/img/ring.jpg',
+        image_url: '/img/diamondring.jpeg',
         is_new: true,
         material: '18K Gold, Emerald'
     },

@@ -25,7 +25,7 @@ const blogPosts: BlogPost[] = [
         date: "19-10-2013",
         author: "bennu",
         comments: 0,
-        image: "/img/bridal.jpeg",
+        image: "/img/gemstone.jpg",
         excerpt: "Essential guide to navigating the digital gemstone market with confidence and security.",
         category: "Guide",
         content: [
@@ -43,7 +43,7 @@ const blogPosts: BlogPost[] = [
         date: "23-04-2012",
         author: "GemMine Staff",
         comments: 0,
-        image: "/img/earring.jpeg",
+        image: "/img/clean.jpg",
         excerpt: "Simple tips to maintain the sparkle and shine of your favorite jewelry pieces.",
         category: "maintenance",
         content: [
@@ -61,7 +61,7 @@ const blogPosts: BlogPost[] = [
         date: "23-04-2012",
         author: "Admin",
         comments: 0,
-        image: "/img/ring.jpg",
+        image: "/img/ringSize.jpg",
         excerpt: "An easy way to find your perfect fit when shopping for yourself or a loved one.",
         category: "Shopping",
         content: [
