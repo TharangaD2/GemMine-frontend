@@ -42,7 +42,7 @@ export default function FeaturedProducts({
                     <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Signature Pieces</span>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#1a1a1a] mt-4">Featured Treasures</h2>
                 </div>
-                <Link href={createPageUrl('collections')}>
+                <Link href={createPageUrl('Collections')}>
                     <Button variant="ghost" className="group text-[#1a1a1a] hover:text-amber-600 mt-4 md:mt-0">
                         View All
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -60,7 +60,7 @@ export default function FeaturedProducts({
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         className="group"
                     >
-                        <Link href={`${createPageUrl('collections')}?category=${product.category}`}>
+                        <Link href={`${createPageUrl('Collections')}?category=${product.category}`}>
                             <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500">
                                 {/* Image Container */}
                                 <div className="aspect-square overflow-hidden relative">

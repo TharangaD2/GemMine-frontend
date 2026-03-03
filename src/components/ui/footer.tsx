@@ -43,7 +43,7 @@ export default function Footer() {
                     <div>
                         <h4 className="text-sm font-medium uppercase tracking-wider mb-4">Quick Links</h4>
                         <ul className="space-y-2">
-                            {['collections', 'about', 'contact'].map((link) => (
+                            {['Collections', 'About', 'Contact'].map((link) => (
                                 <li key={link}>
                                     <Link
                                         href={createPageUrl(link)}
@@ -55,7 +55,7 @@ export default function Footer() {
                             ))}
                             <li>
                                 <Link
-                                    href={createPageUrl('collections')}
+                                    href={createPageUrl('Collections')}
                                     className="text-gray-400 hover:text-amber-400 transition-colors text-sm"
                                 >
                                     High Jewellery
@@ -71,7 +71,7 @@ export default function Footer() {
                             {['Rings', 'Necklaces', 'Earrings', 'Bracelets', 'Bridal'].map((category) => (
                                 <li key={category}>
                                     <Link
-                                        href={`${createPageUrl('collections')}?category=${category.toLowerCase()}`}
+                                        href={`${createPageUrl('Collections')}?category=${category.toLowerCase()}`}
                                         className="text-gray-400 hover:text-[#d4a89a] transition-colors text-sm"
                                     >
                                         {category}

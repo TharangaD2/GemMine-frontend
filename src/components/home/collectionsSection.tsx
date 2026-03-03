@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 
-const collections = [
+const Collections = [
     {
         name: "Bridal Collection",
         description: "Timeless pieces for your special day",
@@ -46,23 +46,23 @@ export default function CollectionsSection() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {collections.map((collection, index) => (
+                {Collections.map((Collection, index) => (
                     <motion.div
-                        key={collection.name}
+                        key={Collection.name}
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
-                        <Link href={`${createPageUrl('collections')}?category=${collection.category}`}>
+                        <Link href={`${createPageUrl('Collections')}?category=${Collection.category}`}>
                             <motion.div
                                 whileHover={{ y: -10 }}
                                 className="group relative overflow-hidden rounded-2xl bg-[#1a1a1a] cursor-pointer"
                             >
                                 <div className="aspect-[3/4] overflow-hidden">
                                     <motion.img
-                                        src={collection.image}
-                                        alt={collection.name}
+                                        src={Collection.image}
+                                        alt={Collection.name}
                                         className="w-full h-full object-cover"
                                         whileHover={{ scale: 1.1 }}
                                         transition={{ duration: 0.6 }}
@@ -73,8 +73,8 @@ export default function CollectionsSection() {
                                 <div className="absolute bottom-0 left-0 right-0 p-6">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h3 className="text-xl font-semibold text-white">{collection.name}</h3>
-                                            <p className="text-gray-400 text-sm mt-1">{collection.description}</p>
+                                            <h3 className="text-xl font-semibold text-white">{Collection.name}</h3>
+                                            <p className="text-gray-400 text-sm mt-1">{Collection.description}</p>
                                         </div>
                                         <motion.div
                                             initial={{ opacity: 0, x: -10 }}
