@@ -61,7 +61,7 @@ export default function FeaturedProducts({
                         className="group"
                     >
                         <Link href={`${createPageUrl('Collections')}?category=${product.category}`}>
-                            <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500">
+                            <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 h-full flex flex-col">
                                 {/* Image Container */}
                                 <div className="aspect-square overflow-hidden relative">
                                     <motion.img
@@ -105,14 +105,16 @@ export default function FeaturedProducts({
                                 </div>
 
                                 {/* Product Info */}
-                                <div className="p-6">
+                                <div className="p-6 flex-1 flex flex-col">
                                     <span className="text-xs text-amber-600 uppercase tracking-wider">{product.category}</span>
-                                    <h3 className="text-lg font-medium text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors">
+                                    <h3 className="text-lg font-medium text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[3.5rem]">
                                         {product.name}
                                     </h3>
-                                    <p className="text-2xl font-light text-[#1a1a1a] mt-2">
-                                        ${product.price?.toLocaleString()}
-                                    </p>
+                                    <div className="mt-auto pt-4">
+                                        <p className="text-2xl font-light text-[#1a1a1a]">
+                                            ${product.price?.toLocaleString()}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </Link>

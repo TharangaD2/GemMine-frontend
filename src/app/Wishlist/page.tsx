@@ -164,7 +164,7 @@ export default function Wishlist() {
                         <h2 className="text-2xl font-serif text-gray-600 mb-4">Your wishlist is empty</h2>
                         <p className="text-gray-500 mb-8">Save your favorite pieces for later</p>
                         <Link href={createPageUrl('Collections')}>
-                            <Button className="bg-[#1a1a1a] hover:bg-amber-700 text-white px-8 py-6 rounded-full transition-all shadow-lg hover:shadow-xl">
+                            <Button className="bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white px-8 py-6 rounded-full transition-all shadow-lg hover:shadow-xl">
                                 Explore Collections
                                 <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>

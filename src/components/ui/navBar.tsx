@@ -75,7 +75,7 @@ export default function Navbar({
                                 <Search className="w-5 h-5" />
                             </Button>
 
-                            <Link href={createPageUrl('wishlist')}>
+                            <Link href={createPageUrl('Wishlist')}>
                                 <Button
                                     variant="ghost"
                                     size="icon"
@@ -90,7 +90,7 @@ export default function Navbar({
                                 </Button>
                             </Link>
 
-                            <Link href={createPageUrl('cart')}>
+                            <Link href={createPageUrl('Cart')}>
                                 <Button
                                     variant="ghost"
                                     size="icon"

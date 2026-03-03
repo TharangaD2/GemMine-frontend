@@ -444,7 +444,7 @@ export default function About() {
                             <div className="aspect-square rounded-full bg-gradient-to-tr from-amber-500/20 to-transparent absolute -inset-10 blur-3xl group-hover:scale-110 transition-transform duration-700" />
                             <div className="aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl relative">
                                 <img
-                                    src="/img/img5.jpeg"
+                                    src="/img/img6.jpeg"
                                     alt="Modern Diamond Jewellery"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:rotate-1 group-hover:scale-105"
                                 />

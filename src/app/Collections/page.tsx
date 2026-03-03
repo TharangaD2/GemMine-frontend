@@ -7,7 +7,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { createPageUrl } from '@/utils';
-import { Heart, Eye, Grid, List, SlidersHorizontal, ChevronDown } from 'lucide-react';
+import { Heart, Eye, Grid, List, SlidersHorizontal, ChevronDown, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
@@ -120,6 +120,43 @@ function CollectionsContent() {
     };
 
     const wishlistIds = wishlist.map(w => w.product_id);
+
+    const addToCartMutation = useMutation({
+        mutationFn: async (product: Product) => {
+            const storedCart = localStorage.getItem(`cart_${user?.email}`);
+            const currentCart = storedCart ? JSON.parse(storedCart) : [];
+
+            const existingIndex = currentCart.findIndex((item: any) => item.product_id === product.id);
+
+            if (existingIndex > -1) {
+                currentCart[existingIndex].quantity += 1;
+            } else {
+                currentCart.push({
+                    id: Math.random().toString(36).substr(2, 9),
+                    product_id: product.id,
+                    quantity: 1,
+                    user_email: user?.email
+                });
+            }
+
+            localStorage.setItem(`cart_${user?.email}`, JSON.stringify(currentCart));
+            return currentCart;
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['cartItems', user?.email] });
+            toast.success('success add to cart');
+        }
+    });
+
+    const handleAddToCart = (e: React.MouseEvent, product: Product) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!user) {
+            toast.error('Please login to add items to cart');
+            return;
+        }
+        addToCartMutation.mutate(product);
+    };
 
     // Filter and sort products
     const filteredProducts = products
@@ -314,7 +351,7 @@ function CollectionsContent() {
                                     <Link href={`${createPageUrl('productDetails')}?id=${product.id}`}>
                                         <motion.div
                                             whileHover={{ y: -8 }}
-                                            className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ${viewMode === 'list' ? 'flex' : ''
+                                            className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col ${viewMode === 'list' ? 'sm:flex-row' : ''
                                                 }`}
                                         >
                                             <div className={`relative overflow-hidden ${viewMode === 'list' ? 'w-48 h-48 flex-shrink-0' : 'aspect-square'}`}>
@@ -350,17 +387,23 @@ function CollectionsContent() {
                                                 )}
                                             </div>
 
-                                            <div className={`p-6 ${viewMode === 'list' ? 'flex-1 flex flex-col justify-center' : ''}`}>
+                                            <div className="p-6 flex-1 flex flex-col">
                                                 <span className="text-xs text-amber-600 uppercase tracking-wider font-semibold">{product.category}</span>
-                                                <h3 className="text-lg font-medium text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors">
+                                                <h3 className="text-lg font-medium text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[3.5rem]">
                                                     {product.name}
                                                 </h3>
-                                                {product.material && (
-                                                    <p className="text-sm text-gray-500 mt-1">{product.material}</p>
-                                                )}
-                                                <p className="text-2xl font-light text-[#1a1a1a] mt-3">
-                                                    ${product.price?.toLocaleString()}
-                                                </p>
+                                                <div className="mt-auto pt-4 flex flex-col gap-4">
+                                                    <p className="text-2xl font-light text-[#1a1a1a]">
+                                                        ${product.price?.toLocaleString()}
+                                                    </p>
+                                                    <Button
+                                                        onClick={(e) => handleAddToCart(e, product)}
+                                                        className="w-full bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white rounded-full py-6 group/btn"
+                                                    >
+                                                        <ShoppingBag className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                                                        Add to Cart
+                                                    </Button>
+                                                </div>
                                             </div>
                                         </motion.div>
                                     </Link>

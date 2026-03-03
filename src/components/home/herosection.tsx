@@ -78,7 +78,7 @@ export default function HeroSection() {
                         <span className="block text-5xl md:text-7xl lg:text-8xl text-white font-light tracking-tight">
                             Timeless
                         </span>
-                        <span className="block text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-[#d4a89a] via-[#e8c4b5] to-[#d4a89a] font-light italic mt-2">
+                        <span className="inline-block text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-[#d4a89a] via-[#e8c4b5] to-[#d4a89a] font-light italic mt-2 pb-4">
                             Elegance
                         </span>
                     </motion.h1>

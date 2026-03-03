@@ -158,7 +158,7 @@ export default function Cart() {
                         <h2 className="text-2xl font-serif text-gray-600 mb-4">Your cart is empty</h2>
                         <p className="text-gray-500 mb-8">Discover our exquisite collections</p>
                         <Link href={createPageUrl('Collections')}>
-                            <Button className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-8 py-6 rounded-full">
+                            <Button className="bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white px-8 py-6 rounded-full">
                                 Explore Collections
                                 <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
@@ -293,7 +293,7 @@ export default function Cart() {
                                 </div>
 
                                 <Link href={createPageUrl('Checkout')}>
-                                    <Button className="w-full mt-8 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white h-14 rounded-full text-lg">
+                                    <Button className="w-full mt-8 bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white h-14 rounded-full text-lg">
                                         Proceed to Checkout
                                         <ArrowRight className="ml-2 w-5 h-5" />
                                     </Button>

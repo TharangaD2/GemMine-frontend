@@ -43,7 +43,7 @@ const blogPosts: BlogPost[] = [
         date: "23-04-2012",
         author: "GemMine Staff",
         comments: 0,
-        image: "/img/clean.jpg",
+        image: "/img/clean.jpeg",
         excerpt: "Simple tips to maintain the sparkle and shine of your favorite jewelry pieces.",
         category: "maintenance",
         content: [

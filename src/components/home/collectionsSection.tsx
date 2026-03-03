@@ -26,7 +26,7 @@ const Collections = [
     {
         name: "Royal Earrings",
         description: "Grace in every movement",
-        image: "/img/earring.jpeg",
+        image: "/img/e1.jpeg",
         category: "earrings"
     }
 ];
