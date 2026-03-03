@@ -15,7 +15,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                     <div>
-                        <Link href={createPageUrl('Home')} className="inline-block mb-4">
+                        <Link href="/" className="inline-block mb-4">
                             <img
                                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6976324f456a9c4ce6479020/0b5c3b59c_gem.png"
                                 alt="Gem Mine"
@@ -43,11 +43,11 @@ export default function Footer() {
                     <div>
                         <h4 className="text-sm font-medium uppercase tracking-wider mb-4">Quick Links</h4>
                         <ul className="space-y-2">
-                            {['Collections', 'About', 'Contact'].map((link) => (
+                            {['collections', 'about', 'contact'].map((link) => (
                                 <li key={link}>
                                     <Link
                                         href={createPageUrl(link)}
-                                        className="text-gray-400 hover:text-[#d4a89a] transition-colors text-sm"
+                                        className="text-gray-400 hover:text-[#d4a89a] transition-colors text-sm capitalize"
                                     >
                                         {link}
                                     </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
                             {['Rings', 'Necklaces', 'Earrings', 'Bracelets', 'Bridal'].map((category) => (
                                 <li key={category}>
                                     <Link
-                                        href={`${createPageUrl('Collections')}?category=${category.toLowerCase()}`}
+                                        href={`${createPageUrl('collections')}?category=${category.toLowerCase()}`}
                                         className="text-gray-400 hover:text-[#d4a89a] transition-colors text-sm"
                                     >
                                         {category}
