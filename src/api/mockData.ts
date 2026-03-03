@@ -5,6 +5,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Rings',
         price: 4500,
         image_url: '/img/diamondring.jpeg',
+        images: ['/img/diamondring.jpeg', '/img/r1.jpeg', '/img/r2.jpeg', '/img/r3.jpeg'],
         is_new: true,
         material: '18K Gold, Emerald'
     },
@@ -14,6 +15,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Necklaces',
         price: 8900,
         image_url: '/img/jewellery.jpg',
+        images: ['/img/jewellery.jpg', '/img/n1.jpeg', '/img/bridal.jpeg', '/img/gemstone.jpg'],
         material: 'Platinum, Diamond'
     },
     {
@@ -22,6 +24,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Earrings',
         price: 3200,
         image_url: '/img/earring.jpeg',
+        images: ['/img/earring.jpeg', '/img/rounde1.jpeg', '/img/rounde2.jpeg'],
         material: 'White Gold, Sapphire'
     },
     {
@@ -30,6 +33,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Bracelets',
         price: 5600,
         image_url: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=800',
+        images: ['https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=800', '/img/img7.png', '/img/img1.png', '/img/img2.png'],
         is_new: true,
         material: '22K Gold'
     },
@@ -39,6 +43,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Rings',
         price: 3800,
         image_url: '/img/r1.jpeg',
+        images: ['/img/r1.jpeg', '/img/r2.jpeg', '/img/r3.jpeg', '/img/r4.jpeg'],
         is_new: true,
         material: '14K White Gold, Diamonds'
     },
@@ -48,6 +53,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Rings',
         price: 1200,
         image_url: '/img/r2.jpeg',
+        images: ['/img/r2.jpeg', '/img/r3.jpeg', '/img/r4.jpeg', '/img/r5.jpeg'],
         material: '18K Rose Gold'
     },
     {
@@ -56,6 +62,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Rings',
         price: 5200,
         image_url: '/img/r3.jpeg',
+        images: ['/img/r3.jpeg', '/img/r4.jpeg', '/img/r5.jpeg', '/img/ringp.jpeg'],
         material: 'Platinum, Diamond'
     },
     {
@@ -64,6 +71,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Rings',
         price: 4900,
         image_url: '/img/ringp.jpeg',
+        images: ['/img/ringp.jpeg', '/img/r4.jpeg', '/img/r5.jpeg', '/img/r1.jpeg'],
         is_new: true,
         material: '18K Rose Gold, Pink Diamond'
     },
@@ -73,6 +81,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Accessories',
         price: 0,
         image_url: '/img/ringSize.jpg',
+        images: ['/img/ringSize.jpg', '/img/clean.jpg', '/img/gemstone.jpg'],
         material: 'Reference Tool'
     },
     {
@@ -81,6 +90,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Rings',
         price: 4200,
         image_url: '/img/r4.jpeg',
+        images: ['/img/r4.jpeg', '/img/r5.jpeg', '/img/r1.jpeg', '/img/r2.jpeg'],
         is_new: true,
         material: '18K Yellow Gold, Emerald'
     },
@@ -90,6 +100,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Rings',
         price: 3500,
         image_url: '/img/r5.jpeg',
+        images: ['/img/r5.jpeg', '/img/r1.jpeg', '/img/r2.jpeg', '/img/r3.jpeg'],
         material: 'White Gold, Sapphire'
     },
     {
@@ -98,6 +109,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Earrings',
         price: 2800,
         image_url: '/img/e1.jpeg',
+        images: ['/img/e1.jpeg', '/img/earring.jpeg', '/img/img5.jpeg', '/img/img6.jpeg'],
         is_new: true,
         material: '14K Gold, Diamonds'
     },
@@ -107,8 +119,18 @@ export const SAMPLE_PRODUCTS = [
         category: 'Necklaces',
         price: 1900,
         image_url: '/img/n1.jpeg',
+        images: ['/img/n1.jpeg', '/img/jewellery.jpg', '/img/bridal.jpeg', '/img/gemstone.jpg'],
         material: 'Silver, Freshwater Pearl'
-    }
+    },
+    {
+        id: '14',
+        name: 'Sapphire Elegance Earrings',
+        category: 'Earrings',
+        price: 3200,
+        image_url: '/img/dote.jpeg',
+        images: ['/img/dote.jpeg', '/img/rounde1.jpeg', '/img/rounde2.jpeg'],
+        material: 'White Gold, Sapphire'
+    },
 ];
 
 export const INITIAL_CART_ITEMS = [

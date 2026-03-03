@@ -7,7 +7,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { createPageUrl } from '@/utils';
-import { Heart, Eye, Grid, List, SlidersHorizontal, ChevronDown, ShoppingBag } from 'lucide-react';
+import { Heart, Eye, Grid, List, SlidersHorizontal, ChevronDown, ShoppingBag, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
@@ -44,6 +44,7 @@ interface Product {
     category: string;
     price: number;
     image_url: string;
+    images?: string[];
     is_new?: boolean;
     material?: string;
     created_date?: string;
@@ -64,6 +65,8 @@ function CollectionsContent() {
     const [sortBy, setSortBy] = useState('newest');
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
     const [selectedMaterial, setSelectedMaterial] = useState('all');
+    const [selectedProductForView, setSelectedProductForView] = useState<Product | null>(null);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const queryClient = useQueryClient();
 
@@ -156,6 +159,25 @@ function CollectionsContent() {
             return;
         }
         addToCartMutation.mutate(product);
+    };
+
+    const handleQuickView = (e: React.MouseEvent, product: Product) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setSelectedProductForView(product);
+        setCurrentImageIndex(0);
+    };
+
+    const nextImage = () => {
+        if (selectedProductForView?.images) {
+            setCurrentImageIndex((prev) => (prev + 1) % selectedProductForView.images!.length);
+        }
+    };
+
+    const prevImage = () => {
+        if (selectedProductForView?.images) {
+            setCurrentImageIndex((prev) => (prev - 1 + selectedProductForView.images!.length) % selectedProductForView.images!.length);
+        }
     };
 
     // Filter and sort products
@@ -348,65 +370,67 @@ function CollectionsContent() {
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ duration: 0.4, delay: index * 0.05 }}
                                 >
-                                    <Link href={`${createPageUrl('productDetails')}?id=${product.id}`}>
-                                        <motion.div
-                                            whileHover={{ y: -8 }}
-                                            className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col ${viewMode === 'list' ? 'sm:flex-row' : ''
-                                                }`}
-                                        >
-                                            <div className={`relative overflow-hidden ${viewMode === 'list' ? 'w-48 h-48 flex-shrink-0' : 'aspect-square'}`}>
-                                                <motion.img
-                                                    src={product.image_url}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover"
-                                                    whileHover={{ scale: 1.1 }}
-                                                    transition={{ duration: 0.6 }}
-                                                />
+                                    <motion.div
+                                        whileHover={{ y: -8 }}
+                                        onClick={(e) => handleQuickView(e, product)}
+                                        className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col cursor-pointer ${viewMode === 'list' ? 'sm:flex-row' : ''
+                                            }`}
+                                    >
+                                        <div className={`relative overflow-hidden ${viewMode === 'list' ? 'w-48 h-48 flex-shrink-0' : 'aspect-square'}`}>
+                                            <motion.img
+                                                src={product.image_url}
+                                                alt={product.name}
+                                                className="w-full h-full object-cover"
+                                                whileHover={{ scale: 1.1 }}
+                                                transition={{ duration: 0.6 }}
+                                            />
 
-                                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                                                    <motion.div
-                                                        initial={{ opacity: 0, scale: 0.5 }}
-                                                        whileHover={{ opacity: 1, scale: 1 }}
-                                                        className="opacity-0 group-hover:opacity-100 transition-opacity"
-                                                    >
-                                                        <Button className="bg-white text-black hover:bg-amber-500 hover:text-white rounded-full">
-                                                            <Eye className="w-4 h-4 mr-2" /> Quick View
-                                                        </Button>
-                                                    </motion.div>
-                                                </div>
-
-                                                <button
-                                                    onClick={(e) => handleAddToWishlist(e, product.id)}
-                                                    className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-amber-500 hover:text-white transition-all z-10"
+                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                                                <motion.div
+                                                    initial={{ opacity: 0, scale: 0.5 }}
+                                                    whileHover={{ opacity: 1, scale: 1 }}
+                                                    className="opacity-0 group-hover:opacity-100 transition-opacity"
                                                 >
-                                                    <Heart className={`w-5 h-5 ${wishlistIds.includes(product.id) ? 'fill-red-500 text-red-500' : ''}`} />
-                                                </button>
-
-                                                {product.is_new && (
-                                                    <Badge className="absolute top-4 left-4 bg-amber-500 text-black border-none">New</Badge>
-                                                )}
-                                            </div>
-
-                                            <div className="p-6 flex-1 flex flex-col">
-                                                <span className="text-xs text-amber-600 uppercase tracking-wider font-semibold">{product.category}</span>
-                                                <h3 className="text-lg font-medium text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[3.5rem]">
-                                                    {product.name}
-                                                </h3>
-                                                <div className="mt-auto pt-4 flex flex-col gap-4">
-                                                    <p className="text-2xl font-light text-[#1a1a1a]">
-                                                        ${product.price?.toLocaleString()}
-                                                    </p>
                                                     <Button
-                                                        onClick={(e) => handleAddToCart(e, product)}
-                                                        className="w-full bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white rounded-full py-6 group/btn"
+                                                        onClick={(e) => handleQuickView(e, product)}
+                                                        className="bg-white text-black hover:bg-amber-500 hover:text-white rounded-full"
                                                     >
-                                                        <ShoppingBag className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                                                        Add to Cart
+                                                        <Eye className="w-4 h-4 mr-2" /> Quick View
                                                     </Button>
-                                                </div>
+                                                </motion.div>
                                             </div>
-                                        </motion.div>
-                                    </Link>
+
+                                            <button
+                                                onClick={(e) => handleAddToWishlist(e, product.id)}
+                                                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-amber-500 hover:text-white transition-all z-10"
+                                            >
+                                                <Heart className={`w-5 h-5 ${wishlistIds.includes(product.id) ? 'fill-red-500 text-red-500' : ''}`} />
+                                            </button>
+
+                                            {product.is_new && (
+                                                <Badge className="absolute top-4 left-4 bg-amber-500 text-black border-none">New</Badge>
+                                            )}
+                                        </div>
+
+                                        <div className="p-6 flex-1 flex flex-col">
+                                            <span className="text-xs text-amber-600 uppercase tracking-wider font-semibold">{product.category}</span>
+                                            <h3 className="text-lg font-medium text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[3.5rem]">
+                                                {product.name}
+                                            </h3>
+                                            <div className="mt-auto pt-4 flex flex-col gap-4">
+                                                <p className="text-2xl font-light text-[#1a1a1a]">
+                                                    ${product.price?.toLocaleString()}
+                                                </p>
+                                                <Button
+                                                    onClick={(e) => handleAddToCart(e, product)}
+                                                    className="w-full bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white rounded-full py-6 group/btn"
+                                                >
+                                                    <ShoppingBag className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                                                    Add to Cart
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </motion.div>
                                 </motion.div>
                             ))}
                         </AnimatePresence>
@@ -430,6 +454,122 @@ function CollectionsContent() {
                     </div>
                 )}
             </div>
+
+            {/* Quick View Modal */}
+            <AnimatePresence>
+                {selectedProductForView && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedProductForView(null)}
+                            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            className="relative bg-white w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]"
+                        >
+                            <button
+                                onClick={() => setSelectedProductForView(null)}
+                                className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow-lg hover:bg-amber-500 hover:text-white transition-all"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            {/* Image Section */}
+                            <div className="w-full md:w-1/2 relative bg-gray-50 flex items-center justify-center group/modal">
+                                <motion.img
+                                    key={currentImageIndex}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    src={selectedProductForView.images?.[currentImageIndex] || selectedProductForView.image_url}
+                                    alt={selectedProductForView.name}
+                                    className="w-full h-full object-cover aspect-square"
+                                />
+
+                                {selectedProductForView.images && selectedProductForView.images.length > 1 && (
+                                    <>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                                            className="absolute left-4 w-12 h-12 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow-lg hover:bg-amber-500 hover:text-white transition-all opacity-0 group-hover/modal:opacity-100"
+                                        >
+                                            <ChevronLeft className="w-6 h-6" />
+                                        </button>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                                            className="absolute right-4 w-12 h-12 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow-lg hover:bg-amber-500 hover:text-white transition-all opacity-0 group-hover/modal:opacity-100"
+                                        >
+                                            <ChevronRight className="w-6 h-6" />
+                                        </button>
+
+                                        {/* Image Pagination Dots */}
+                                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                                            {selectedProductForView.images.map((_, idx) => (
+                                                <button
+                                                    key={idx}
+                                                    onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+                                                    className={`w-2 h-2 rounded-full transition-all ${idx === currentImageIndex ? 'w-6 bg-amber-500' : 'bg-gray-400 hover:bg-gray-600'
+                                                        }`}
+                                                />
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+
+                            {/* Details Section */}
+                            <div className="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto">
+                                <div className="space-y-6">
+                                    <div>
+                                        <span className="text-amber-600 tracking-widest uppercase text-sm font-semibold">
+                                            {selectedProductForView.category}
+                                        </span>
+                                        <h2 className="text-3xl md:text-4xl font-serif text-[#1a1a1a] mt-2 leading-tight">
+                                            {selectedProductForView.name}
+                                        </h2>
+                                        <p className="text-3xl font-light text-[#1a1a1a] mt-4">
+                                            ${selectedProductForView.price.toLocaleString()}
+                                        </p>
+                                    </div>
+
+                                    <div className="space-y-4 pt-6 border-t font-sans">
+                                        <div>
+                                            <h4 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Material</h4>
+                                            <p className="text-gray-700 mt-1">{selectedProductForView.material || "Exquisite Fine Material"}</p>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Availability</h4>
+                                            <p className="text-emerald-600 font-medium mt-1">In Stock - Ready to ship</p>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Description</h4>
+                                            <p className="text-gray-600 mt-2 leading-relaxed">
+                                                This stunning {selectedProductForView.name.toLowerCase()} piece, meticulously crafted with {selectedProductForView.material || "the finest materials"}, embodies timeless elegance and modern luxury. A perfect addition to your collection.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="pt-8 space-y-4">
+                                        <Button
+                                            onClick={(e) => {
+                                                handleAddToCart(e, selectedProductForView);
+                                                setSelectedProductForView(null);
+                                            }}
+                                            className="w-full bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white h-14 rounded-full text-lg shadow-xl shadow-blue-900/10"
+                                        >
+                                            <ShoppingBag className="w-5 h-5 mr-3" />
+                                            Add to Shopping Cart
+                                        </Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
