@@ -99,7 +99,7 @@ export default function HeroSection() {
                         transition={{ duration: 0.8, delay: 0.6 }}
                         className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start"
                     >
-                        <Link href={createPageUrl('collections')}>
+                        <Link href={createPageUrl('Collections')}>
                             <Button className="group bg-gradient-to-r from-[#d4a89a] to-[#c9a88a] hover:from-[#e8c4b5] hover:to-[#d4a89a] text-white font-medium px-8 py-6 text-lg rounded-full transition-all duration-500 shadow-[0_0_30px_rgba(212,168,154,0.3)] hover:shadow-[0_0_50px_rgba(212,168,154,0.5)]">
                                 Explore Collections
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
