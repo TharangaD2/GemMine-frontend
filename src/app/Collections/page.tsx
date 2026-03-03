@@ -141,7 +141,7 @@ function CollectionsContent() {
     return (
         <div className="min-h-screen bg-[#f8f5f0]">
             {/* Hero Banner */}
-            <div className="relative h-[40vh] md:h-[50vh] bg-[#1a1a1a] overflow-hidden">
+            <div className="relative h-[75vh] md:h-[75vh] bg-[#1a1a1a] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
                 <img
                     src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80"

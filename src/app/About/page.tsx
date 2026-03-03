@@ -65,7 +65,7 @@ export default function About() {
     return (
         <div className="min-h-screen bg-[#f8f5f0]">
             {/* Hero Section */}
-            <div className="relative h-[60vh] bg-[#1a1a1a] overflow-hidden">
+            <div className="relative h-[75vh] bg-[#1a1a1a] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
                 <img
                     src="/img/jewellery.jpg"
@@ -145,7 +145,7 @@ export default function About() {
             </section>
 
             {/* Products Section */}
-            <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#1a1a1a]">
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-[#1e2a47] via-[#2d3e6a] to-[#1e2a47]">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -163,9 +163,14 @@ export default function About() {
                                 key={product.title}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
+                                whileHover={{ y: -10, scale: 1.02 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors group"
+                                transition={{
+                                    opacity: { duration: 0.5, delay: index * 0.1 },
+                                    y: { duration: 0.5, delay: index * 0.1 },
+                                    scale: { duration: 0.3 }
+                                }}
+                                className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-amber-500/30 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 group cursor-default"
                             >
                                 <div className="w-12 h-12 mb-6 rounded-xl bg-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/30 transition-colors">
                                     <product.icon className="w-6 h-6 text-amber-400" />
@@ -235,7 +240,7 @@ export default function About() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-amber-900 text-white p-12 rounded-3xl overflow-hidden relative"
+                        className="bg-gradient-to-br from-[#1e2a47] via-[#2d3e6a] to-[#1e2a47] text-white p-12 rounded-3xl overflow-hidden relative"
                     >
                         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                         <div className="relative z-10">
@@ -402,9 +407,9 @@ export default function About() {
             </section>
 
             {/* Lab-Grown Diamonds Section */}
-            <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#1a1a1a] overflow-hidden">
+            <section className="py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-[#1e2a47] via-[#2d3e6a] to-[#1e2a47] overflow-hidden">
                 <div className="max-w-7xl mx-auto relative">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -437,11 +442,13 @@ export default function About() {
                             className="relative group cursor-pointer"
                         >
                             <div className="aspect-square rounded-full bg-gradient-to-tr from-amber-500/20 to-transparent absolute -inset-10 blur-3xl group-hover:scale-110 transition-transform duration-700" />
-                            <img
-                                src="/img/img5.jpeg"
-                                alt="Modern Diamond Jewellery"
-                                className="relative rounded-3xl w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:rotate-1"
-                            />
+                            <div className="aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl relative">
+                                <img
+                                    src="/img/img5.jpeg"
+                                    alt="Modern Diamond Jewellery"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:rotate-1 group-hover:scale-105"
+                                />
+                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -510,21 +517,21 @@ export default function About() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-amber-50 to-amber-100/50">
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#f8f5f0]">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a]">
+                        <h2 className="text-4xl md:text-5xl font-serif text-[#1e2a47]">
                             Experience Authenticity & Artistry
                         </h2>
-                        <p className="text-gray-600 mt-6 text-lg">
+                        <p className="text-[#1e2a47]/70 mt-6 text-lg">
                             Whether you’re a dedicated collector or a curious explorer, Traditional Gemmine (Pvt) Ltd promises authenticity, artistry, and timeless beauty.
                         </p>
                         <Link href={createPageUrl('collections')}>
-                            <Button className="mt-8 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-10 py-6 rounded-full text-lg">
+                            <Button className="mt-8 bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white px-10 py-6 rounded-full text-lg">
                                 Explore Collections
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </Button>
