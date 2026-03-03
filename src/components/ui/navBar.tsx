@@ -25,7 +25,7 @@ export default function Navbar({
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     const navLinks = [
-        { name: 'Collections', path: 'Collections' },
+        { name: 'Collections', path: 'collections' },
         { name: 'Blog', path: 'Blog' },
         { name: 'About', path: 'About' },
         { name: 'Contact', path: 'Contact' }
@@ -43,7 +43,7 @@ export default function Navbar({
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
-                        <Link href={createPageUrl('/')} className="flex items-center">
+                        <Link href="/" className="flex items-center">
                             <img
                                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6976324f456a9c4ce6479020/0b5c3b59c_gem.png"
                                 alt="Gem Mine"
@@ -75,7 +75,7 @@ export default function Navbar({
                                 <Search className="w-5 h-5" />
                             </Button>
 
-                            <Link href={createPageUrl('Wishlist')}>
+                            <Link href={createPageUrl('wishlist')}>
                                 <Button
                                     variant="ghost"
                                     size="icon"
@@ -90,7 +90,7 @@ export default function Navbar({
                                 </Button>
                             </Link>
 
-                            <Link href={createPageUrl('Cart')}>
+                            <Link href={createPageUrl('cart')}>
                                 <Button
                                     variant="ghost"
                                     size="icon"

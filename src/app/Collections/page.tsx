@@ -311,7 +311,7 @@ function CollectionsContent() {
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ duration: 0.4, delay: index * 0.05 }}
                                 >
-                                    <Link href={`${createPageUrl('ProductDetail')}?id=${product.id}`}>
+                                    <Link href={`${createPageUrl('productDetails')}?id=${product.id}`}>
                                         <motion.div
                                             whileHover={{ y: -8 }}
                                             className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ${viewMode === 'list' ? 'flex' : ''

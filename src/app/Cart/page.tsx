@@ -157,7 +157,7 @@ export default function Cart() {
                         <ShoppingBag className="w-20 h-20 mx-auto text-gray-300 mb-6" />
                         <h2 className="text-2xl font-serif text-gray-600 mb-4">Your cart is empty</h2>
                         <p className="text-gray-500 mb-8">Discover our exquisite collections</p>
-                        <Link href={createPageUrl('Collections')}>
+                        <Link href={createPageUrl('collections')}>
                             <Button className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-8 py-6 rounded-full">
                                 Explore Collections
                                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -179,7 +179,7 @@ export default function Cart() {
                                         className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow"
                                     >
                                         <div className="flex gap-6">
-                                            <Link href={`${createPageUrl('ProductDetail')}?id=${item.product.id}`}>
+                                            <Link href={`${createPageUrl('productDetails')}?id=${item.product.id}`}>
                                                 <motion.div
                                                     whileHover={{ scale: 1.05 }}
                                                     className="w-28 h-28 md:w-36 md:h-36 rounded-xl overflow-hidden flex-shrink-0"
@@ -199,7 +199,7 @@ export default function Cart() {
                                                             <span className="text-xs text-amber-600 uppercase tracking-wider font-semibold">
                                                                 {item.product.category}
                                                             </span>
-                                                            <Link href={`${createPageUrl('ProductDetail')}?id=${item.product.id}`}>
+                                                            <Link href={`${createPageUrl('productDetails')}?id=${item.product.id}`}>
                                                                 <h3 className="text-lg font-medium text-[#1a1a1a] hover:text-amber-600 transition-colors">
                                                                     {item.product.name}
                                                                 </h3>
@@ -292,7 +292,7 @@ export default function Cart() {
                                     <span className="font-serif text-2xl text-[#1a1a1a]">${total.toLocaleString()}</span>
                                 </div>
 
-                                <Link href={createPageUrl('Checkout')}>
+                                <Link href={createPageUrl('checkout')}>
                                     <Button className="w-full mt-8 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white h-14 rounded-full text-lg">
                                         Proceed to Checkout
                                         <ArrowRight className="ml-2 w-5 h-5" />

@@ -163,7 +163,7 @@ export default function Wishlist() {
                         <Heart className="w-20 h-20 mx-auto text-gray-200 mb-6" />
                         <h2 className="text-2xl font-serif text-gray-600 mb-4">Your wishlist is empty</h2>
                         <p className="text-gray-500 mb-8">Save your favorite pieces for later</p>
-                        <Link href={createPageUrl('Collections')}>
+                        <Link href={createPageUrl('collections')}>
                             <Button className="bg-[#1a1a1a] hover:bg-amber-700 text-white px-8 py-6 rounded-full transition-all shadow-lg hover:shadow-xl">
                                 Explore Collections
                                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -183,7 +183,7 @@ export default function Wishlist() {
                                     className="group"
                                 >
                                     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 h-full flex flex-col">
-                                        <Link href={`${createPageUrl('ProductDetail')}?id=${item.product.id}`}>
+                                        <Link href={`${createPageUrl('productDetails')}?id=${item.product.id}`}>
                                             <div className="aspect-square overflow-hidden relative bg-gray-50">
                                                 <motion.img
                                                     src={item.product.image_url}
@@ -211,7 +211,7 @@ export default function Wishlist() {
                                             <span className="text-[10px] text-amber-600 uppercase tracking-[0.2em] font-bold">
                                                 {item.product.category}
                                             </span>
-                                            <Link href={`${createPageUrl('ProductDetail')}?id=${item.product.id}`}>
+                                            <Link href={`${createPageUrl('productDetails')}?id=${item.product.id}`}>
                                                 <h3 className="text-lg font-serif text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors line-clamp-1">
                                                     {item.product.name}
                                                 </h3>

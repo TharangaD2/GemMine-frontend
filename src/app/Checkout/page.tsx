@@ -155,7 +155,7 @@ export default function Checkout() {
             <div className="min-h-screen bg-[#f8f5f0] pt-32 pb-20 px-6">
                 <div className="max-w-4xl mx-auto text-center">
                     <h1 className="text-3xl font-serif text-[#1a1a1a] mb-4">Your cart is empty</h1>
-                    <Link href={createPageUrl('Collections')}>
+                    <Link href={createPageUrl('collections')}>
                         <Button className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-8 py-6 rounded-full">
                             Continue Shopping
                         </Button>
@@ -168,7 +168,7 @@ export default function Checkout() {
     return (
         <div className="min-h-screen bg-[#f8f5f0] pt-32 pb-20">
             <div className="max-w-6xl mx-auto px-6">
-                <Link href={createPageUrl('Cart')} className="inline-flex items-center gap-2 text-gray-600 hover:text-amber-600 mb-8 group transition-colors">
+                <Link href={createPageUrl('cart')} className="inline-flex items-center gap-2 text-gray-600 hover:text-amber-600 mb-8 group transition-colors">
                     <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                     Back to Cart
                 </Link>
