@@ -109,7 +109,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Earrings',
         price: 2800,
         image_url: '/img/e1.jpeg',
-        images: ['/img/e1.jpeg', '/img/earring.jpeg', '/img/img5.jpeg', '/img/img6.jpeg'],
+        images: ['/img/e1.jpeg', '/img/earring.jpeg',],
         is_new: true,
         material: '14K Gold, Diamonds'
     },
@@ -128,7 +128,7 @@ export const SAMPLE_PRODUCTS = [
         category: 'Earrings',
         price: 3200,
         image_url: '/img/dote.jpeg',
-        images: ['/img/dote.jpeg', '/img/rounde1.jpeg', '/img/rounde2.jpeg'],
+        images: ['/img/dote.jpeg', '/img/green2.jpeg',],
         material: 'White Gold, Sapphire'
     },
 ];

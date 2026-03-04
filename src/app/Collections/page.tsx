@@ -340,11 +340,11 @@ function CollectionsContent() {
 
                 {/* Products Grid */}
                 {isLoading ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
                         {[...Array(8)].map((_, i) => (
                             <div key={i} className="bg-white rounded-2xl overflow-hidden animate-pulse">
                                 <div className="aspect-square bg-gray-200" />
-                                <div className="p-6 space-y-3">
+                                <div className="p-3 md:p-6 space-y-3">
                                     <div className="h-3 bg-gray-200 rounded w-1/3" />
                                     <div className="h-5 bg-gray-200 rounded w-2/3" />
                                     <div className="h-6 bg-gray-200 rounded w-1/4" />
@@ -356,7 +356,7 @@ function CollectionsContent() {
                     <motion.div
                         layout
                         className={viewMode === 'grid'
-                            ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+                            ? "grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8"
                             : "flex flex-col gap-6"
                         }
                     >
@@ -412,20 +412,20 @@ function CollectionsContent() {
                                             )}
                                         </div>
 
-                                        <div className="p-6 flex-1 flex flex-col">
-                                            <span className="text-xs text-amber-600 uppercase tracking-wider font-semibold">{product.category}</span>
-                                            <h3 className="text-lg font-medium text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[3.5rem]">
+                                        <div className="p-3 md:p-6 flex-1 flex flex-col">
+                                            <span className="text-[10px] md:text-xs text-amber-600 uppercase tracking-wider font-semibold">{product.category}</span>
+                                            <h3 className="text-sm md:text-lg font-medium text-[#1a1a1a] mt-1 md:mt-2 group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[2.5rem] md:min-h-[3.5rem]">
                                                 {product.name}
                                             </h3>
-                                            <div className="mt-auto pt-4 flex flex-col gap-4">
-                                                <p className="text-2xl font-light text-[#1a1a1a]">
+                                            <div className="mt-auto pt-2 md:pt-4 flex flex-col gap-2 md:gap-4">
+                                                <p className="text-lg md:text-2xl font-light text-[#1a1a1a]">
                                                     ${product.price?.toLocaleString()}
                                                 </p>
                                                 <Button
                                                     onClick={(e) => handleAddToCart(e, product)}
-                                                    className="w-full bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white rounded-full py-6 group/btn"
+                                                    className="w-full bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white rounded-full py-4 md:py-6 group/btn text-xs md:text-sm"
                                                 >
-                                                    <ShoppingBag className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                                                    <ShoppingBag className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2 group-hover/btn:scale-110 transition-transform" />
                                                     Add to Cart
                                                 </Button>
                                             </div>

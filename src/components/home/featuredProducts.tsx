@@ -50,7 +50,7 @@ export default function FeaturedProducts({
                 </Link>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 {featuredProducts.map((product, index) => (
                     <motion.div
                         key={product.id}
@@ -105,13 +105,13 @@ export default function FeaturedProducts({
                                 </div>
 
                                 {/* Product Info */}
-                                <div className="p-6 flex-1 flex flex-col">
-                                    <span className="text-xs text-amber-600 uppercase tracking-wider">{product.category}</span>
-                                    <h3 className="text-lg font-medium text-[#1a1a1a] mt-2 group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[3.5rem]">
+                                <div className="p-3 md:p-6 flex-1 flex flex-col">
+                                    <span className="text-[10px] md:text-xs text-amber-600 uppercase tracking-wider">{product.category}</span>
+                                    <h3 className="text-sm md:text-lg font-medium text-[#1a1a1a] mt-1 md:mt-2 group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[2.5rem] md:min-h-[3.5rem]">
                                         {product.name}
                                     </h3>
-                                    <div className="mt-auto pt-4">
-                                        <p className="text-2xl font-light text-[#1a1a1a]">
+                                    <div className="mt-auto pt-2 md:pt-4">
+                                        <p className="text-lg md:text-2xl font-light text-[#1a1a1a]">
                                             ${product.price?.toLocaleString()}
                                         </p>
                                     </div>

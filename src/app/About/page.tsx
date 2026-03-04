@@ -157,7 +157,7 @@ export default function About() {
                         <h2 className="text-4xl md:text-5xl font-serif text-white mt-4">Products & Expertise</h2>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                         {products.map((product, index) => (
                             <motion.div
                                 key={product.title}
@@ -170,13 +170,13 @@ export default function About() {
                                     y: { duration: 0.5, delay: index * 0.1 },
                                     scale: { duration: 0.3 }
                                 }}
-                                className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-amber-500/30 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 group cursor-default"
+                                className="bg-white/5 border border-white/10 p-4 md:p-8 rounded-2xl hover:bg-white/10 hover:border-amber-500/30 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 group cursor-default"
                             >
-                                <div className="w-12 h-12 mb-6 rounded-xl bg-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/30 transition-colors">
-                                    <product.icon className="w-6 h-6 text-amber-400" />
+                                <div className="w-8 h-8 md:w-12 md:h-12 mb-4 md:mb-6 rounded-xl bg-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/30 transition-colors">
+                                    <product.icon className="w-4 h-4 md:w-6 md:h-6 text-amber-400" />
                                 </div>
-                                <h3 className="text-xl font-medium text-white mb-3">{product.title}</h3>
-                                <p className="text-gray-400 text-sm leading-relaxed">{product.description}</p>
+                                <h3 className="text-base md:text-xl font-medium text-white mb-2 md:mb-3">{product.title}</h3>
+                                <p className="text-gray-400 text-[10px] md:text-sm leading-relaxed">{product.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -279,7 +279,7 @@ export default function About() {
                         <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a] mt-4">Leadership Team</h2>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                         {team.map((member, index) => (
                             <motion.div
                                 key={member.name}
@@ -287,11 +287,11 @@ export default function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group p-8 rounded-3xl bg-[#f8f5f0] border border-transparent hover:border-amber-200 transition-all duration-500"
+                                className="group p-4 md:p-8 rounded-3xl bg-[#f8f5f0] border border-transparent hover:border-amber-200 transition-all duration-500"
                             >
-                                <h3 className="text-xl font-medium text-[#1a1a1a] mb-1 group-hover:text-amber-700 transition-colors">{member.name}</h3>
-                                <p className="text-amber-600 text-sm font-medium mb-4">{member.role}</p>
-                                <p className="text-gray-500 text-sm leading-relaxed">{member.description}</p>
+                                <h3 className="text-base md:text-xl font-medium text-[#1a1a1a] mb-1 group-hover:text-amber-700 transition-colors">{member.name}</h3>
+                                <p className="text-amber-600 text-[10px] md:text-sm font-medium mb-2 md:mb-4">{member.role}</p>
+                                <p className="text-gray-500 text-[10px] md:text-sm leading-relaxed">{member.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -314,7 +314,7 @@ export default function About() {
                         </p>
                     </motion.div>
 
-                    <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                    <div className="columns-2 sm:columns-2 lg:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6">
                         {[
                             {
                                 src: "/img/img1.png",

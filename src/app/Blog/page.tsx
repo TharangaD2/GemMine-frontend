@@ -100,7 +100,7 @@ export default function BlogPage() {
 
             {/* Blog Grid */}
             <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                     {blogPosts.map((post, index) => (
                         <motion.div
                             key={post.id}
@@ -125,27 +125,27 @@ export default function BlogPage() {
                                 </div>
                             </div>
 
-                            <div className="p-8 flex flex-col flex-grow">
-                                <div className="flex items-center gap-4 text-xs text-gray-400 mb-4 tracking-wide">
+                            <div className="p-4 md:p-8 flex flex-col flex-grow">
+                                <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-[10px] md:text-xs text-gray-400 mb-2 md:mb-4 tracking-wide">
                                     <span className="flex items-center gap-1.5 uppercase font-medium">
-                                        <Calendar className="w-3.5 h-3.5 text-amber-600" />
+                                        <Calendar className="w-3 h-3 md:w-3.5 md:h-3.5 text-amber-600" />
                                         {post.date}
                                     </span>
-                                    <span className="w-1 h-1 rounded-full bg-amber-200" />
+                                    <span className="hidden md:block w-1 h-1 rounded-full bg-amber-200" />
                                     <span className="flex items-center gap-1.5 uppercase font-medium">
-                                        <User className="w-3.5 h-3.5 text-amber-600" />
+                                        <User className="w-3 h-3 md:w-3.5 md:h-3.5 text-amber-600" />
                                         {post.author}
                                     </span>
                                 </div>
-                                <h3 className="text-2xl font-serif text-[#1a1a1a] mb-4 group-hover:text-amber-800 transition-colors line-clamp-2">
+                                <h3 className="text-base md:text-2xl font-serif text-[#1a1a1a] mb-2 md:mb-4 group-hover:text-amber-800 transition-colors line-clamp-2">
                                     {post.title}
                                 </h3>
-                                <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                                <p className="text-gray-500 text-[10px] md:text-sm leading-relaxed mb-4 md:mb-6 line-clamp-2 md:line-clamp-3">
                                     {post.excerpt}
                                 </p>
-                                <div className="mt-auto flex items-center text-amber-700 text-xs font-bold uppercase tracking-[0.2em] group-hover:gap-3 transition-all duration-300">
-                                    Read Full Story
-                                    <ChevronRight className="w-4 h-4" />
+                                <div className="mt-auto flex items-center text-amber-700 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] group-hover:gap-3 transition-all duration-300">
+                                    Read Story
+                                    <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
                                 </div>
                             </div>
                         </motion.div>

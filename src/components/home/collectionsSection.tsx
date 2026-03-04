@@ -45,7 +45,7 @@ export default function CollectionsSection() {
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mt-4">Our Collections</h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {Collections.map((Collection, index) => (
                     <motion.div
                         key={Collection.name}
@@ -70,18 +70,18 @@ export default function CollectionsSection() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                                 </div>
 
-                                <div className="absolute bottom-0 left-0 right-0 p-6">
+                                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h3 className="text-xl font-semibold text-white">{Collection.name}</h3>
-                                            <p className="text-gray-400 text-sm mt-1">{Collection.description}</p>
+                                            <h3 className="text-base md:text-xl font-semibold text-white">{Collection.name}</h3>
+                                            <p className="text-gray-400 text-[10px] md:text-sm mt-0.5 md:mt-1">{Collection.description}</p>
                                         </div>
                                         <motion.div
                                             initial={{ opacity: 0, x: -10 }}
                                             whileHover={{ opacity: 1, x: 0 }}
-                                            className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center group-hover:opacity-100 opacity-0 transition-opacity"
+                                            className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-amber-500 flex items-center justify-center group-hover:opacity-100 opacity-0 transition-opacity"
                                         >
-                                            <ArrowUpRight className="w-5 h-5 text-black" />
+                                            <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-black" />
                                         </motion.div>
                                     </div>
                                 </div>

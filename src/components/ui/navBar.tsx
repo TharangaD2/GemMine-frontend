@@ -66,14 +66,7 @@ export default function Navbar({
 
                         {/* Right Icons */}
                         <div className="flex items-center space-x-4">
-                            <Button
-                                variant="ghost"
-                                size="icon"
-                                className="text-gray-300 hover:text-[#d4a89a] hover:bg-transparent"
-                                onClick={() => setIsSearchOpen(true)}
-                            >
-                                <Search className="w-5 h-5" />
-                            </Button>
+
 
                             <Link href={createPageUrl('Wishlist')}>
                                 <Button
