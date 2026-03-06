@@ -8,33 +8,34 @@ import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 
 const milestones = [
-    { year: '2003', title: 'Traditional Gemmine Founded', description: 'Established with a vision to elevate Sri Lanka’s global presence in the gem trade.' },
-    { year: '2010', title: 'Showroom Expansion', description: 'Opened our centrally located showroom in Colombo, showcasing curated fine jewellery.' },
-    { year: '2015', title: 'Global Recognition', description: 'Expanded our reach to serving discerning clients in over a dozen countries.' },
-    { year: '2023', title: '20 Years of Excellence', description: 'Celebrating two decades of delivering superior quality and enduring value.' },
-    { year: '2025', title: 'Future of Luxury', description: 'Preparing to introduce ethically produced lab-grown diamonds to our collection.' }
+    { year: '1988', title: 'First Showroom in Galle', description: 'We opened our first showroom in Galle and established ourselves as providers of high quality gemstones and exquisitely designed jewelry.' },
+    { year: '2000', title: 'Expansion to Colombo', description: 'Gem Mine opened its first showroom in Colombo, quickly becoming a household name for fashionable jewelry with highly experienced in-house designers.' },
+    { year: '2002', title: 'Jewelry Design Award', description: 'Our commitment to quality, creativity and service won us the prestigious Sri Lanka Jewelry Design Award for our innovative and timeless masterpieces.' },
+    { year: '2013', title: 'Celebrating 25 Years', description: 'Grown from a small family firm to an award-winning leader in Sri Lanka and internationally, serving satisfied customers from around the world.' },
+    { year: '2023', title: '35 Years of Excellence', description: 'Celebrating three and a half decades of delivering superior quality, enduring value, and unmatched craftsmanship.' },
+    { year: '2025', title: 'Future of Luxury', description: 'Preparing to introduce ethically produced lab-grown diamonds to our collection, bridging tradition with modern innovation.' }
 ];
 
 const team = [
     {
         name: 'Mohammed Naagur Pitchai Ariz',
         role: 'Chairman',
-        description: 'With over three decades in the gem industry, Mr. Ariz leading figures across Sri Lanka’s key gem-trading regions.'
+        description: 'With over three decades in the gem industry, Mr. Ariz is a respected figure across Sri Lanka’s key gem-trading regions, including Colombo, Beruwala, Galle, Kandy, and Ratnapura. His leadership continues to inspire the company’s strategic direction and core values.'
     },
     {
         name: 'M.S.K.Rahman',
         role: 'Managing Director',
-        description: 'A GIA-certified gemologist with more than 30 years of experience and deep technical expertise.'
+        description: 'A GIA-certified gemologist, Mr. Kaleel brings more than 30  years of experience and deep technical expertise. His personalized client service and gem consultancy are hallmarks of the company’s reputation.'
     },
     {
         name: 'Mohammed Yousuf Faraz',
         role: 'Director, Strategy & Finance',
-        description: 'Leveraging international experience from the UK, overseeing procurement, logistics, and overall operations.'
+        description: 'Leveraging international experience gained in the UK, Mr. Faraz oversees procurement, logistics, and overall operations. He has played a pivotal role in the company’s growth over the past 20 years.'
     },
     {
         name: 'Mohammed Abdulla Nilamdeen',
         role: 'Director, Consultant',
-        description: 'CIMA (UK)-qualified accountant with over 35 years of international experience in financial planning.'
+        description: 'A CIMA (UK)-qualified accountant with over 35  years of regional and international experience, Mr. Nilamdeen leads financial planning, investment, and strategic development. He holds memberships with FCMA, ACPA (Botswana), and CGMA (USA).'
     }
 ];
 
@@ -104,7 +105,7 @@ export default function About() {
                             </h2>
                             <div className="mt-8 space-y-6 text-gray-600 leading-relaxed">
                                 <p>
-                                    Founded in 2003, Traditional Gemmine (Pvt) Ltd has earned a distinguished reputation in Sri Lanka’s gem and jewellery industry. Guided by a vision to elevate the nation’s global presence in the gem trade, we uphold the highest standards of quality, integrity, and customer care.
+                                    Founded in 2003, Gemmine (Pvt) Ltd has earned a distinguished reputation in Sri Lanka’s gem and jewellery industry. Guided by a vision to elevate the nation’s global presence in the gem trade, we uphold the highest standards of quality, integrity, and customer care.
                                 </p>
                                 <p>
                                     Our centrally located showroom in Colombo showcases a curated selection of fine jewellery, crafted to meet international benchmarks. We pride ourselves on delivering superior quality, personalized service, and enduring value to clients around the world.
@@ -138,6 +139,56 @@ export default function About() {
                                     alt="Jewellery Detail"
                                     className="w-full h-full object-cover"
                                 />
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* What We Offer Section */}
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="order-2 lg:order-1"
+                        >
+                            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                                <img
+                                    src="/img/gemstone.jpg"
+                                    alt="Our Offerings"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1e2a47]/60 to-transparent" />
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="order-1 lg:order-2"
+                        >
+                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Excellence & Variety</span>
+                            <h2 className="text-4xl md:text-5xl font-serif text-[#1e2a47] mt-4 mb-8">What We Offer</h2>
+                            <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
+                                <p>
+                                    Well known for our excellent quality, value and unmatched service, we offer a wide range of jewelry types, stones and styles at prices to match your every need.
+                                </p>
+                                <p className="bg-amber-50 p-6 rounded-2xl border-l-4 border-amber-500 italic">
+                                    "We are especially known for our fine quality rubies, pearls, emeralds and other colored stones in various settings."
+                                </p>
+                                <div className="flex flex-wrap gap-4 pt-4">
+                                    {['Rubies', 'Pearls', 'Emeralds', 'Sapphires', 'Diamonds'].map((stone) => (
+                                        <span key={stone} className="px-4 py-2 bg-[#f8f5f0] rounded-full text-sm font-medium text-[#1e2a47] border border-amber-100">
+                                            {stone}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     </div>
@@ -246,8 +297,8 @@ export default function About() {
                         <div className="relative z-10">
                             <span className="text-amber-400 tracking-[0.3em] uppercase text-sm">Global Presence</span>
                             <h2 className="text-4xl font-serif mt-4 mb-8">Serving the World</h2>
-                            <p className="text-amber-100/80 leading-relaxed mb-8 text-lg max-w-2xl">
-                                Traditional Gemmine (Pvt) Ltd proudly serves a broad international market, with a dedicated clientele from across the globe.
+                            <p className="text-amber-100/80 leading-relaxed mb-8 text-lg ">
+                                Gemmine (Pvt) Ltd proudly serves a broad international market, with a dedicated clientele from across the globe.
                             </p>
                             <div className="flex flex-wrap gap-3">
                                 {['China', 'Korea', 'Singapore', 'India', 'Saudi Arabia', 'UAE', 'Russia', 'France', 'Switzerland'].map(country => (
@@ -263,6 +314,133 @@ export default function About() {
                             </div>
                         </div>
                     </motion.div>
+                </div>
+            </section>
+
+            {/* Why Choose Us Section */}
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-white to-[#f8f5f0]">
+                <div className="max-w-7xl mx-auto">
+                    <div className="bg-[#1e2a47] rounded-[3rem] p-12 md:p-20 overflow-hidden relative shadow-2xl">
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+
+                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                            >
+                                <span className="text-amber-400 tracking-[0.3em] uppercase text-sm">Why Choose Us</span>
+                                <h2 className="text-4xl md:text-6xl font-serif text-white mt-4 mb-8">Commitment to Perfection</h2>
+                                <div className="space-y-6 text-blue-100/80 text-lg leading-relaxed">
+                                    <p>
+                                        We are one of the most reputable jewelry stores in Sri Lanka. We offer a myriad of products and services in our spacious showroom, where we also create our unique and stylish pieces.
+                                    </p>
+                                    <p>
+                                        We take great pride in providing only the highest quality, value and services to our clients, ensuring every piece tells a story of elegance and craftsmanship.
+                                    </p>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-8 mt-12">
+                                    <div>
+                                        <div className="text-3xl font-serif text-amber-400 mb-2">20+</div>
+                                        <div className="text-sm text-blue-200 uppercase tracking-wider">Years Experience</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-3xl font-serif text-amber-400 mb-2">100%</div>
+                                        <div className="text-sm text-blue-200 uppercase tracking-wider">Quality Assured</div>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100 }}
+                                className="relative"
+                            >
+                                <div className="rounded-3xl overflow-hidden glass-morphism border border-white/10 p-4 shadow-2xl bg-white/5 backdrop-blur-sm">
+                                    <img
+                                        src="/img/img6.jpeg"
+                                        alt="Our Craftsmanship"
+                                        className="rounded-2xl w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="absolute -bottom-6 -right-6 bg-amber-500 text-white p-8 rounded-2xl shadow-xl hidden md:block">
+                                    <Diamond className="w-8 h-8 mb-2" />
+                                    <div className="text-xl font-medium">Unique Pieces</div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Expertise & Team Section */}
+            <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#f8f5f0]">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm font-medium">Knowledge & Skill</span>
+                            <h2 className="text-4xl md:text-5xl font-serif text-[#1e2a47] mt-4 mb-8">Our Expertise & Team</h2>
+                            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                                Our strength lies in our experienced and multilingual team, specializing in every facet of the gemstone journey.
+                            </p>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                {[
+                                    { title: 'Gemology & Mining', icon: Diamond },
+                                    { title: 'Stone Identification & Valuation', icon: Award },
+                                    { title: 'Laboratory Testing & Certification', icon: Globe },
+                                    { title: 'Traditional & Contemporary Design', icon: Users }
+                                ].map((item, index) => (
+                                    <motion.div
+                                        key={item.title}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                        className="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-amber-100/50"
+                                    >
+                                        <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                                            <item.icon className="w-5 h-5 text-amber-600" />
+                                        </div>
+                                        <span className="text-[#1e2a47] font-medium text-sm leading-tight">{item.title}</span>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="bg-[#1e2a47] p-8 md:p-12 rounded-[2.5rem] text-white relative overflow-hidden"
+                        >
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                            <div className="relative z-10">
+                                <p className="text-blue-100/80 text-lg leading-relaxed mb-8 italic">
+                                    "We stay attuned to global trends, market dynamics, and evolving customer preferences. Our customer-first culture ensures that every client receives the highest level of attention, care, and expertise."
+                                </p>
+                                <div className="h-px w-16 bg-amber-500/50 mb-6" />
+                                <div className="flex items-center gap-4">
+                                    <div className="flex -space-x-3">
+                                        {[1, 2, 3].map(i => (
+                                            <div key={i} className="w-10 h-10 rounded-full border-2 border-[#1e2a47] bg-amber-500/20" />
+                                        ))}
+                                    </div>
+                                    <span className="text-sm text-blue-200">Trusted by generations of collectors</span>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -418,21 +596,15 @@ export default function About() {
                             <span className="text-amber-400 tracking-[0.3em] uppercase text-sm font-medium">Coming Soon</span>
                             <h2 className="text-4xl md:text-5xl font-serif text-white mt-4 mb-6">Lab-Grown Diamonds</h2>
                             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                                In line with our commitment to innovation and sustainability, Traditional Gemmine (Pvt) Ltd will soon introduce lab-grown diamonds into our offerings.
+                                In line with our commitment to innovation and sustainability, Gemmine (Pvt) Ltd
+                                will soon introduce lab-grown diamonds into our offerings. Ethically produced and virtually
+                                indistinguishable from natural diamonds, these stones represent the future of responsible
+                                luxury, offering beauty, value, and eco-conscious sourcing for a new generation of buyers.
                             </p>
                             <div className="space-y-4">
-                                <div className="flex items-center gap-4 text-white">
-                                    <div className="w-2 h-2 rounded-full bg-amber-500" />
-                                    <span>Ethically Produced & Sustainable</span>
-                                </div>
-                                <div className="flex items-center gap-4 text-white">
-                                    <div className="w-2 h-2 rounded-full bg-amber-500" />
-                                    <span>Virtually Indistinguishable from Natural</span>
-                                </div>
-                                <div className="flex items-center gap-4 text-white">
-                                    <div className="w-2 h-2 rounded-full bg-amber-500" />
-                                    <span>Eco-Conscious Responsible Luxury</span>
-                                </div>
+                                <p className="text-gray-400 text-lg leading-relaxed mb-8">Our ever-evolving product range ensures there's something for every taste, tradition, and
+                                    trend. From timeless classics to cutting-edge creations, we bring you gems that speak to your
+                                    soul and jewellery that lasts a lifetime.</p>
                             </div>
                         </motion.div>
                         <motion.div

@@ -59,11 +59,7 @@ export default function Home() {
             <HeroSection />
             <CollectionsSection />
             <MarqueeSection />
-            <FeaturedProducts
-                products={products}
-                onAddToWishlist={handleAddToWishlist}
-                wishlistIds={wishlistIds}
-            />
+            <FeaturedProducts />
             <FeaturesSection />
             <HeritageSection />
             <NewsletterSection />
