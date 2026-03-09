@@ -18,7 +18,7 @@ const milestones = [
 
 const team = [
     {
-        name: 'Mohammed Naagur Pitchai Ariz',
+        name: 'M.N.P.Ariz',
         role: 'Chairman',
         description: 'With over three decades in the gem industry, Mr. Ariz is a respected figure across Sri Lanka’s key gem-trading regions, including Colombo, Beruwala, Galle, Kandy, and Ratnapura. His leadership continues to inspire the company’s strategic direction and core values.'
     },
@@ -28,12 +28,12 @@ const team = [
         description: 'A GIA-certified gemologist, Mr. Kaleel brings more than 30  years of experience and deep technical expertise. His personalized client service and gem consultancy are hallmarks of the company’s reputation.'
     },
     {
-        name: 'Mohammed Yousuf Faraz',
+        name: 'M.Y.Faraz',
         role: 'Director, Strategy & Finance',
         description: 'Leveraging international experience gained in the UK, Mr. Faraz oversees procurement, logistics, and overall operations. He has played a pivotal role in the company’s growth over the past 20 years.'
     },
     {
-        name: 'Mohammed Abdulla Nilamdeen',
+        name: 'M.A.Nilamdeen',
         role: 'Director, Consultant',
         description: 'A CIMA (UK)-qualified accountant with over 35  years of regional and international experience, Mr. Nilamdeen leads financial planning, investment, and strategic development. He holds memberships with FCMA, ACPA (Botswana), and CGMA (USA).'
     }
@@ -702,9 +702,9 @@ export default function About() {
                         <p className="text-[#1e2a47]/70 mt-6 text-lg">
                             Whether you’re a dedicated collector or a curious explorer, Traditional Gemmine (Pvt) Ltd promises authenticity, artistry, and timeless beauty.
                         </p>
-                        <Link href={createPageUrl('collections')}>
+                        <Link href={createPageUrl('Collections')}>
                             <Button className="mt-8 bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white px-10 py-6 rounded-full text-lg">
-                                Explore Collections
+                                Explore Collection
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </Button>
                         </Link>
