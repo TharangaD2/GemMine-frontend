@@ -8,12 +8,12 @@ import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 
 const milestones = [
-    { year: '1988', title: 'First Showroom in Galle', description: 'We opened our first showroom in Galle and established ourselves as providers of high quality gemstones and exquisitely designed jewelry.' },
-    { year: '2000', title: 'Expansion to Colombo', description: 'Gem Mine opened its first showroom in Colombo, quickly becoming a household name for fashionable jewelry with highly experienced in-house designers.' },
-    { year: '2002', title: 'Jewelry Design Award', description: 'Our commitment to quality, creativity and service won us the prestigious Sri Lanka Jewelry Design Award for our innovative and timeless masterpieces.' },
-    { year: '2013', title: 'Celebrating 25 Years', description: 'Grown from a small family firm to an award-winning leader in Sri Lanka and internationally, serving satisfied customers from around the world.' },
-    { year: '2023', title: '35 Years of Excellence', description: 'Celebrating three and a half decades of delivering superior quality, enduring value, and unmatched craftsmanship.' },
-    { year: '2025', title: 'Future of Luxury', description: 'Preparing to introduce ethically produced lab-grown diamonds to our collection, bridging tradition with modern innovation.' }
+    { year: '1988', title: 'First Showroom in Galle', description: 'We opened our first showroom in Galle and established ourselves as providers of high quality gemstones and exquisitely designed jewelry.', image: '/img/building.jpeg' },
+    { year: '2000', title: 'Expansion to Colombo', description: 'Gem Mine opened its first showroom in Colombo, quickly becoming a household name for fashionable jewelry with highly experienced in-house designers.', image: '/img/img2.png' },
+    { year: '2002', title: 'Jewelry Design Award', description: 'Our commitment to quality, creativity and service won us the prestigious Sri Lanka Jewelry Design Award for our innovative and timeless masterpieces.', image: '/img/e1.jpeg' },
+    { year: '2013', title: 'Celebrating 25 Years', description: 'Grown from a small family firm to an award-winning leader in Sri Lanka and internationally, serving satisfied customers from around the world.', image: '/img/img3.png' },
+    { year: '2023', title: '35 Years of Excellence', description: 'Celebrating three and a half decades of delivering superior quality, enduring value, and unmatched craftsmanship.', image: '/img/img4.png' },
+    { year: '2025', title: 'Future of Luxury', description: 'Preparing to introduce ethically produced lab-grown diamonds to our collection, bridging tradition with modern innovation.', image: '/img/diamond.jpg' }
 ];
 
 const team = [
@@ -266,10 +266,20 @@ export default function About() {
                                     className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                                 >
                                     <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                                        <div className={`inline-block p-8 rounded-2xl bg-[#f8f5f0] border border-amber-100/50 hover:border-amber-200 transition-all ${index % 2 === 0 ? 'lg:ml-auto' : ''} max-w-md shadow-sm hover:shadow-md`}>
-                                            <span className="text-amber-600 font-serif text-xl font-bold">{milestone.year}</span>
-                                            <h4 className="text-xl font-medium text-[#1a1a1a] mt-2">{milestone.title}</h4>
-                                            <p className="text-gray-600 mt-2 leading-relaxed">{milestone.description}</p>
+                                        <div className={`relative inline-block p-8 rounded-2xl bg-[#f8f5f0] border border-amber-100/50 hover:border-amber-200 transition-all ${index % 2 === 0 ? 'lg:ml-auto' : ''} max-w-md shadow-sm hover:shadow-md group z-10`}>
+                                            {/* Decorative Corner Image */}
+                                            <div className={`absolute w-35 h-35 opacity-100 group-hover:scale-110 transition-all duration-500 pointer-events-none z-20
+                                                ${index % 2 === 0 ? '-top-10 -left-10' : '-top-10 -right-10'}`}>
+                                                <img
+                                                    src={milestone.image}
+                                                    alt=""
+                                                    className="w-full h-full object-cover rounded-full p-2 bg-white border-2 border-amber-100 shadow-2xl"
+                                                />
+                                            </div>
+
+                                            <span className="text-amber-600 font-serif text-xl font-bold relative z-10">{milestone.year}</span>
+                                            <h4 className="text-xl font-medium text-[#1a1a1a] mt-2 relative z-10">{milestone.title}</h4>
+                                            <p className="text-gray-600 mt-2 leading-relaxed relative z-10">{milestone.description}</p>
                                         </div>
                                     </div>
 
