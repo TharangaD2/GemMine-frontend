@@ -135,7 +135,7 @@ export default function About() {
                             </div>
                             <div className="absolute -bottom-8 -left-8 w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
                                 <img
-                                    src="/img/bluering.jpeg"
+                                    src="/img/diamondring.jpeg"
                                     alt="Jewellery Detail"
                                     className="w-full h-full object-cover"
                                 />
@@ -367,7 +367,10 @@ export default function About() {
                                         className="rounded-2xl w-full h-full object-cover"
                                     />
                                 </div>
-                                <div className="absolute -bottom-6 -right-6 bg-amber-500 text-white p-8 rounded-2xl shadow-xl hidden md:block">
+                                <div
+                                    className="absolute -bottom-6 -right-6 text-white p-8 rounded-2xl shadow-xl hidden md:block bg-cover bg-center"
+                                    style={{ backgroundImage: "url('/img/r2.jpeg')" }}
+                                >
                                     <Diamond className="w-8 h-8 mb-2" />
                                     <div className="text-xl font-medium">Unique Pieces</div>
                                 </div>
@@ -519,7 +522,7 @@ export default function About() {
                                 sub: "Beautifully wrapped for a special someone"
                             },
                             {
-                                src: "/img/img5.jpeg",
+                                src: "/img/img5new.jpeg",
                                 alt: "Lady wearing diamond earrings",
                                 caption: "Radiant Confidence",
                                 sub: "Sparkling diamond earrings for every occasion"
@@ -616,7 +619,7 @@ export default function About() {
                             <div className="aspect-square rounded-full bg-gradient-to-tr from-amber-500/20 to-transparent absolute -inset-10 blur-3xl group-hover:scale-110 transition-transform duration-700" />
                             <div className="aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl relative">
                                 <img
-                                    src="/img/img6.jpeg"
+                                    src="/img/diamond.jpg"
                                     alt="Modern Diamond Jewellery"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:rotate-1 group-hover:scale-105"
                                 />

@@ -418,9 +418,9 @@ function CollectionsContent() {
                                                 {product.name}
                                             </h3>
                                             <div className="mt-auto pt-2 md:pt-4 flex flex-col gap-2 md:gap-4">
-                                                <p className="text-lg md:text-2xl font-light text-[#1a1a1a]">
+                                                {/* <p className="text-lg md:text-2xl font-light text-[#1a1a1a]">
                                                     ${product.price?.toLocaleString()}
-                                                </p>
+                                                </p>*/}
                                                 <Button
                                                     onClick={(e) => handleAddToCart(e, product)}
                                                     className="w-full bg-gradient-to-r from-[#1e2a47] to-[#2d3e6a] hover:from-[#2d3e6a] hover:to-[#1e2a47] text-white rounded-full py-4 md:py-6 group/btn text-xs md:text-sm"

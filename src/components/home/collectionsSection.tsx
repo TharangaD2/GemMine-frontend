@@ -20,7 +20,7 @@ const Collections = [
     {
         name: "Gold Necklaces",
         description: "Elegance that adorns",
-        image: "/img/jewellery.jpg",
+        image: "/img/n1.jpeg",
         category: "necklaces"
     },
     {

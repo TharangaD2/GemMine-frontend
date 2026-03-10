@@ -14,7 +14,7 @@ export const SAMPLE_PRODUCTS = [
         name: 'Diamond Solitaire Necklace',
         category: 'Necklaces',
         price: 8900,
-        image_url: '/img/jewellery.jpg',
+        image_url: '/img/n1.jpeg',
         images: ['/img/jewellery.jpg', '/img/n1.jpeg', '/img/bridal.jpeg', '/img/gemstone.jpg'],
         material: 'Platinum, Diamond'
     },

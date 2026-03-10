@@ -19,7 +19,7 @@ const curatedCategories = [
         id: 'semi-precious',
         title: "Semi-Precious Gemstones",
         description: "We source and cut exceptional garnets, amethysts, aquamarines, topaz, tourmalines, spinels, moonstones, peridots, and more, each piece handpicked for its unique hue, brilliance, and authenticity.",
-        image: "/img/jewellery.jpg",
+        image: "/img/n1.jpeg",
         icon: Award
     },
     {
@@ -33,14 +33,14 @@ const curatedCategories = [
         id: 'diamond-sets',
         title: "Diamond Jewellery Sets",
         description: "Premium diamond sets feature conflict-free, GIA-certified stones. Designed to radiate elegance and sophistication, these sets are ideal for weddings, high-end gifting, or legacy investments. Cut and polished to maximize brilliance.",
-        image: "/img/img5.jpeg",
+        image: "/img/diamond.jpg",
         icon: Globe
     },
     {
         id: 'bespoke-designs',
         title: "Bespoke and Custom Designs",
         description: "Personalized design services to turn your vision into a wearable masterpiece. From selecting stones to sketching the design and executing the final craft, we collaborate closely with clients to create meaningful pieces.",
-        image: "/img/img6.jpeg",
+        image: "/img/rounde1.jpeg",
         icon: PenTool
     },
     {
@@ -85,20 +85,32 @@ export default function FeaturedProducts() {
                 >
                     {[...curatedCategories, ...curatedCategories].map((cat, index) => (
                         <div key={`${cat.id}-${index}`} className="w-[280px] md:w-[320px] flex-shrink-0">
-                            <div className="bg-white rounded-[2rem] p-8 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-amber-100/20 group/card h-full flex flex-col">
-                                <div className="mb-6">
-                                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center group-hover/card:bg-amber-500 group-hover/card:text-white transition-all duration-500">
-                                        <cat.icon className="w-6 h-6" />
-                                    </div>
-                                </div>
+                            <div
+                                className="relative rounded-[2rem] p-8 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-amber-100/20 group/card h-full flex flex-col"
+                                style={{
+                                    backgroundImage: `url(${cat.image})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center'
+                                }}
+                            >
+                                {/* Subtle overlay to show background image while keeping text clear */}
+                                <div className="absolute inset-0 bg-white/85 group-hover/card:bg-white/75 transition-all duration-500" />
 
-                                <div className="flex-1 flex flex-col">
-                                    <h3 className="text-lg md:text-xl font-serif text-[#1e2a47] mb-3 group-hover/card:text-amber-600 transition-colors">
-                                        {cat.title}
-                                    </h3>
-                                    <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
-                                        {cat.description}
-                                    </p>
+                                <div className="relative z-10 h-full flex flex-col">
+                                    <div className="mb-6">
+                                        <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center group-hover/card:bg-amber-500 group-hover/card:text-white transition-all duration-500">
+                                            <cat.icon className="w-6 h-6" />
+                                        </div>
+                                    </div>
+
+                                    <div className="flex-1 flex flex-col">
+                                        <h3 className="text-lg md:text-xl font-serif text-[#1e2a47] mb-3 group-hover/card:text-amber-600 transition-colors">
+                                            {cat.title}
+                                        </h3>
+                                        <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
+                                            {cat.description}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
