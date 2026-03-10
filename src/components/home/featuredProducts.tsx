@@ -104,10 +104,10 @@ export default function FeaturedProducts() {
                                     </div>
 
                                     <div className="flex-1 flex flex-col">
-                                        <h3 className="text-lg md:text-xl font-serif text-[#1e2a47] mb-3 group-hover/card:text-amber-600 transition-colors">
+                                        <h3 className="text-lg md:text-xl font-serif text-gray-900 mb-3 group-hover/card:text-amber-600 transition-colors">
                                             {cat.title}
                                         </h3>
-                                        <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
+                                        <p className="text-gray-800 text-xs md:text-sm leading-relaxed">
                                             {cat.description}
                                         </p>
                                     </div>

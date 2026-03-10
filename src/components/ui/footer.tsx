@@ -22,6 +22,9 @@ export default function Footer() {
                                 className="h-20 w-auto"
                             />
                         </Link>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                            Crafting timeless elegance with every piece.
+                        </p>
                         <div className="flex space-x-3">
                             {[Instagram, Facebook, Twitter, Youtube].map((Icon, index) => (
                                 <motion.a

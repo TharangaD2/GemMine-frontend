@@ -382,7 +382,7 @@ export default function About() {
                                     style={{ backgroundImage: "url('/img/r2.jpeg')" }}
                                 >
                                     <Diamond className="w-8 h-8 mb-2" />
-                                    <div className="text-xl font-medium">Unique Pieces</div>
+                                    <div className="text-xl font-medium pt-8">Unique Pieces</div>
                                 </div>
                             </motion.div>
                         </div>
@@ -393,40 +393,42 @@ export default function About() {
             {/* Our Expertise & Team Section */}
             <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#f8f5f0]">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm font-medium">Knowledge & Skill</span>
-                            <h2 className="text-4xl md:text-5xl font-serif text-[#1e2a47] mt-4 mb-8">Our Expertise & Team</h2>
-                            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                                Our strength lies in our experienced and multilingual team, specializing in every facet of the gemstone journey.
-                            </p>
+                            <div className="flex flex-col justify-center h-full">
+                                <span className="text-amber-600 tracking-[0.3em] uppercase text-sm font-medium">Knowledge & Skill</span>
+                                <h2 className="text-4xl md:text-5xl font-serif text-[#1e2a47] mt-4 mb-8">Our Expertise & Team</h2>
+                                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                                    Our strength lies in our experienced and multilingual team, specializing in every facet of the gemstone journey.
+                                </p>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                {[
-                                    { title: 'Gemology & Mining', icon: Diamond },
-                                    { title: 'Stone Identification & Valuation', icon: Award },
-                                    { title: 'Laboratory Testing & Certification', icon: Globe },
-                                    { title: 'Traditional & Contemporary Design', icon: Users }
-                                ].map((item, index) => (
-                                    <motion.div
-                                        key={item.title}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1 }}
-                                        className="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-amber-100/50"
-                                    >
-                                        <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
-                                            <item.icon className="w-5 h-5 text-amber-600" />
-                                        </div>
-                                        <span className="text-[#1e2a47] font-medium text-sm leading-tight">{item.title}</span>
-                                    </motion.div>
-                                ))}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    {[
+                                        { title: 'Gemology & Mining', icon: Diamond },
+                                        { title: 'Stone Identification & Valuation', icon: Award },
+                                        { title: 'Laboratory Testing & Certification', icon: Globe },
+                                        { title: 'Traditional & Contemporary Design', icon: Users }
+                                    ].map((item, index) => (
+                                        <motion.div
+                                            key={item.title}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: index * 0.1 }}
+                                            className="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-amber-100/50"
+                                        >
+                                            <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                                                <item.icon className="w-5 h-5 text-amber-600" />
+                                            </div>
+                                            <span className="text-[#1e2a47] font-medium text-sm leading-tight">{item.title}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
 
@@ -435,7 +437,7 @@ export default function About() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="bg-[#1e2a47] p-8 md:p-12 rounded-[2.5rem] text-white relative overflow-hidden"
+                            className="bg-[#1e2a47] p-8 md:p-12 rounded-[2.5rem] text-white relative overflow-hidden flex flex-col justify-center h-full"
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                             <div className="relative z-10">
