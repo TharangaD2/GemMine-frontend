@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Diamond, Award, Users, Globe, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -63,6 +63,14 @@ const products = [
 ];
 
 export default function About() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.5;
+        }
+    }, []);
+
     return (
         <div className="min-h-screen bg-[#f8f5f0]">
             {/* Hero Section */}
@@ -125,6 +133,7 @@ export default function About() {
                         >
                             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                                 <video
+                                    ref={videoRef}
                                     src="/vedio/blue_ring.mp4"
                                     autoPlay
                                     muted

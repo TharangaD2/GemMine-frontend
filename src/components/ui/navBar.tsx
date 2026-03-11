@@ -45,7 +45,7 @@ export default function Navbar({
                         {/* Logo */}
                         <Link href="/" className="flex items-center">
                             <img
-                                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6976324f456a9c4ce6479020/0b5c3b59c_gem.png"
+                                src="/img/logo.png"
                                 alt="Gem Mine"
                                 className="h-20 w-auto"
                             />

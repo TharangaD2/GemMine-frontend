@@ -202,11 +202,16 @@ function CollectionsContent() {
             {/* Hero Banner */}
             <div className="relative h-[75vh] md:h-[75vh] bg-[#1a1a1a] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
-                <img
-                    src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80"
-                    alt="Collections Banner"
-                    className="w-full h-full object-cover opacity-50"
-                />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-50"
+                >
+                    <source src="/vedio/collection.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
                 <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}

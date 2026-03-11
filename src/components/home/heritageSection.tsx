@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,6 +6,14 @@ import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 
 export default function HeritageSection() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.5;
+        }
+    }, []);
+
     return (
         <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-[#f8f5f0] to-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -23,6 +31,7 @@ export default function HeritageSection() {
                             className="rounded-2xl overflow-hidden shadow-2xl"
                         >
                             <video
+                                ref={videoRef}
                                 src="/vedio/pinkgem.mp4"
                                 autoPlay
                                 loop
