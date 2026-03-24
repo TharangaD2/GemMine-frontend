@@ -47,7 +47,7 @@ export default function Navbar({
                             <img
                                 src="/img/logo.png"
                                 alt="Gem Mine"
-                                className="h-20 w-auto"
+                                className="h-12 w-auto"
                             />
                         </Link>
 

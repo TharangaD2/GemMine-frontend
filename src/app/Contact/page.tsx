@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
 
 const contactInfo = [
@@ -32,11 +33,30 @@ const contactInfo = [
     }
 ];
 
+const countryCodes = [
+    { code: '+94', flag: '🇱🇰', name: 'Sri Lanka' },
+    { code: '+1', flag: '🇺🇸', name: 'USA/Canada' },
+    { code: '+44', flag: '🇬🇧', name: 'UK' },
+    { code: '+61', flag: '🇦🇺', name: 'Australia' },
+    { code: '+91', flag: '🇮🇳', name: 'India' },
+    { code: '+81', flag: '🇯🇵', name: 'Japan' },
+    { code: '+86', flag: '🇨🇳', name: 'China' },
+    { code: '+49', flag: '🇩🇪', name: 'Germany' },
+    { code: '+33', flag: '🇫🇷', name: 'France' },
+    { code: '+39', flag: '🇮🇹', name: 'Italy' },
+    { code: '+971', flag: '🇦🇪', name: 'UAE' },
+    { code: '+966', flag: '🇸🇦', name: 'Saudi Arabia' },
+    { code: '+65', flag: '🇸🇬', name: 'Singapore' },
+    { code: '+60', flag: '🇲🇾', name: 'Malaysia' },
+    { code: '+27', flag: '🇿🇦', name: 'South Africa' },
+];
+
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
+        countryCode: '+94',
         subject: '',
         message: ''
     });
@@ -54,6 +74,7 @@ export default function Contact() {
             name: '',
             email: '',
             phone: '',
+            countryCode: '+94',
             subject: '',
             message: ''
         });
@@ -129,20 +150,7 @@ export default function Contact() {
                                 ))}
                             </div>
 
-                            {/* Map Placeholder */}
-                            <div className="mt-12 aspect-video rounded-2xl overflow-hidden bg-gray-200">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.81938928828!2d79.85167!3d6.9147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2594191d4e0e1%3A0x6b8765f0e97214e2!2sTraditional%20Gem%20Mine!5e0!3m2!1sen!2slk!4v1709543166847!5m2!1sen!2slk"
-                                    width="100%"
-                                    height="100%"
-                                    style={{ border: 0 }}
-                                    allowFullScreen={true}
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                />
-                            </div>
                         </motion.div>
-
                         {/* Contact Form */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
@@ -188,14 +196,31 @@ export default function Contact() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <Label htmlFor="phone">Phone Number</Label>
-                                            <Input
-                                                id="phone"
-                                                name="phone"
-                                                value={formData.phone}
-                                                onChange={handleChange}
-                                                className="mt-1"
-                                                placeholder="+1 (555) 000-0000"
-                                            />
+                                            <div className="flex gap-2 mt-1">
+                                                <Select
+                                                    value={formData.countryCode}
+                                                    onValueChange={(value) => setFormData({ ...formData, countryCode: value })}
+                                                >
+                                                    <SelectTrigger className="w-[110px]">
+                                                        <SelectValue placeholder="Code" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        {countryCodes.map((country) => (
+                                                            <SelectItem key={country.code} value={country.code}>
+                                                                {country.code}
+                                                            </SelectItem>
+                                                        ))}
+                                                    </SelectContent>
+                                                </Select>
+                                                <Input
+                                                    id="phone"
+                                                    name="phone"
+                                                    value={formData.phone}
+                                                    onChange={handleChange}
+                                                    className="flex-1"
+                                                    placeholder="77 000 0000"
+                                                />
+                                            </div>
                                         </div>
                                         <div>
                                             <Label htmlFor="subject">Subject</Label>
@@ -245,6 +270,27 @@ export default function Contact() {
                             </div>
                         </motion.div>
                     </div>
+
+                    {/* Map Section - Full Width */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="mt-16 w-full"
+                    >
+                        <div className="aspect-[21/9] rounded-2xl overflow-hidden bg-gray-200 w-full">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.81938928828!2d79.85167!3d6.9147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2594191d4e0e1%3A0x6b8765f0e97214e2!2sTraditional%20Gem%20Mine!5e0!3m2!1sen!2slk!4v1709543166847!5m2!1sen!2slk"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+                    </motion.div>
                 </div>
             </section>
         </div>
