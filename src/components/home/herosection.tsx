@@ -1,11 +1,22 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createPageUrl } from '@/utils';
+
+const carouselImages = [
+    '/img/n1.jpeg',
+    '/img/r1.jpeg',
+    '/img/green2.jpeg',
+    '/img/rounde2.jpeg',
+    '/img/ringp.jpeg',
+    '/img/e1.jpeg',
+    '/img/r1.jpeg'
+];
 
 export default function HeroSection() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -18,13 +29,18 @@ export default function HeroSection() {
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
     const [isMounted, setIsMounted] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         setIsMounted(true);
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+        }, 3500);
+        return () => clearInterval(interval);
     }, []);
 
     return (
-        <div ref={containerRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#1e2a47] via-[#2d3e6a] to-[#1e2a47]">
+        <div ref={containerRef} className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#1e2a47] via-[#2d3e6a] to-[#0f0f0f]">
             {/* Animated background particles */}
             <div className="absolute inset-0 overflow-hidden">
                 {isMounted && [...Array(20)].map((_, i) => (
@@ -145,15 +161,27 @@ export default function HeroSection() {
                             className="absolute inset-12 rounded-full overflow-hidden shadow-[0_0_100px_rgba(212,168,154,0.2)] border-2 border-[#d4a89a]/30"
                             style={{ perspective: '1000px' }}
                         >
-                            <video
-                                src="/vedio/ring.mp4"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                            <AnimatePresence mode="popLayout">
+                                <motion.div
+                                    key={currentImageIndex}
+                                    initial={{ opacity: 0, scale: 1.2, rotate: 5, filter: 'blur(10px)' }}
+                                    animate={{ opacity: 1, scale: 1, rotate: 0, filter: 'blur(0px)' }}
+                                    exit={{ opacity: 0, scale: 0.8, rotate: -5, filter: 'blur(10px)' }}
+                                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                                    className="absolute inset-0 cursor-pointer"
+                                    onClick={() => setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <Image
+                                        src={carouselImages[currentImageIndex]}
+                                        alt={`Carousel image ${currentImageIndex + 1}`}
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                    />
+                                </motion.div>
+                            </AnimatePresence>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                         </motion.div>
 
                         {/* Floating sparkles */}

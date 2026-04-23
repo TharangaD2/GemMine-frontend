@@ -19,7 +19,7 @@ export default function Footer() {
                             <img
                                 src="img/logo.png"
                                 alt="Gem Mine"
-                                className="h-20 w-auto"
+                                className="h-28 w-auto"
                             />
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">

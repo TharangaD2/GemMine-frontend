@@ -8,7 +8,7 @@ const Collections = [
     {
         name: "Bridal Collection",
         description: "Timeless pieces for your special day",
-        image: "/img/bridal.jpeg",
+        image: "/img/wedding_img.png",
         category: "bridal"
     },
     {
@@ -28,7 +28,8 @@ const Collections = [
         description: "Grace in every movement",
         image: "/img/e1.jpeg",
         category: "earrings"
-    }
+    },
+
 ];
 
 export default function CollectionsSection() {

@@ -28,7 +28,7 @@ const team = [
         description: 'A GIA-certified gemologist, Mr. Kaleel brings more than 30  years of experience and deep technical expertise. His personalized client service and gem consultancy are hallmarks of the company’s reputation.'
     },
     {
-        name: 'M.Y.Faraz',
+        name: 'M.Yousuf Faraz',
         role: 'Director, Strategy & Finance',
         description: 'Leveraging international experience gained in the UK, Mr. Faraz oversees procurement, logistics, and overall operations. He has played a pivotal role in the company’s growth over the past 20 years.'
     },
@@ -76,11 +76,16 @@ export default function About() {
             {/* Hero Section */}
             <div className="relative h-[75vh] bg-[#1a1a1a] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
-                <img
-                    src="/img/jewellery.jpg"
-                    alt="Craftsmanship"
-                    className="w-full h-full object-cover opacity-60"
-                />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-50"
+                >
+                    <source src="/vedio/gold.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
                 <div className="absolute inset-0 flex items-center">
                     <div className="max-w-7xl mx-auto px-6 md:px-12">
                         <motion.div

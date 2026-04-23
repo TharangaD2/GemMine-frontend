@@ -90,11 +90,16 @@ export default function Contact() {
             {/* Hero Section */}
             <div className="relative h-[75vh] bg-[#1a1a1a] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
-                <img
-                    src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1600&q=80"
-                    alt="Contact Us"
-                    className="w-full h-full object-cover opacity-40"
-                />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-50"
+                >
+                    <source src="/vedio/white_ring.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
                 <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
