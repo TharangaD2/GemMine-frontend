@@ -112,13 +112,13 @@ export default function About() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Est. 2003</span>
+                            <span className="text-amber-600 tracking-[0.3em] uppercase text-sm">Est. 1988</span>
                             <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a] mt-4">
                                 Our Heritage & Vision
                             </h2>
                             <div className="mt-8 space-y-6 text-gray-600 leading-relaxed">
                                 <p>
-                                    Founded in 2003, Gemmine (Pvt) Ltd has earned a distinguished reputation in Sri Lanka’s gem and jewellery industry. Guided by a vision to elevate the nation’s global presence in the gem trade, we uphold the highest standards of quality, integrity, and customer care.
+                                    Founded in 1988, Gemmine (Pvt) Ltd has earned a distinguished reputation in Sri Lanka’s gem and jewellery industry. Guided by a vision to elevate the nation’s global presence in the gem trade, we uphold the highest standards of quality, integrity, and customer care.
                                 </p>
                                 <p>
                                     Our centrally located showroom in Colombo showcases a curated selection of fine jewellery, crafted to meet international benchmarks. We pride ourselves on delivering superior quality, personalized service, and enduring value to clients around the world.
