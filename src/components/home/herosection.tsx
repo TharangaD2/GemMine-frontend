@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { createPageUrl } from '@/utils';
 
 const carouselImages = [
-    '/img/n1.jpeg',
+    '/img/n1_crop.jpeg',
     '/img/r1.jpeg',
     '/img/green2.jpeg',
     '/img/rounde2.jpeg',

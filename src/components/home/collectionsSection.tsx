@@ -29,24 +29,32 @@ const Collections = [
         image: "/img/e1.jpeg",
         category: "earrings"
     },
+    {
+        name: "Gem Stones",
+        description: "Grace in every movement",
+        image: "/img/gemstone.jpg",
+        category: "gem-stones"
+    },
 
 ];
 
 export default function CollectionsSection() {
     return (
-        <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-[#0f0f0f] to-[#f8f5f0]">
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="text-center mb-16"
-            >
-                <span className="text-amber-500 tracking-[0.3em] uppercase text-sm">Curated Excellence</span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mt-4">Our Collections</h2>
-            </motion.div>
+        <section className="py-24 bg-gradient-to-b from-[#0f0f0f] to-[#f8f5f0] overflow-hidden">
+            <div className="px-6 md:px-12 lg:px-24">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16"
+                >
+                    <span className="text-amber-500 tracking-[0.3em] uppercase text-sm">Curated Excellence</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mt-4">Our Collections</h2>
+                </motion.div>
+            </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 px-6 md:px-12 lg:px-24 pb-4">
                 {Collections.map((Collection, index) => (
                     <motion.div
                         key={Collection.name}

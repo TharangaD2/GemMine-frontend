@@ -33,7 +33,8 @@ const categories = [
     { id: 'necklaces', name: 'Necklaces' },
     { id: 'earrings', name: 'Earrings' },
     { id: 'bracelets', name: 'Bracelets' },
-    { id: 'bridal', name: 'Bridal' }
+    { id: 'bridal', name: 'Bridal' },
+    { id: 'gem-stones', name: 'Gem Stones' }
 ];
 
 const materials = ['Gold', 'Silver', 'Platinum', 'Rose Gold', 'White Gold'];
